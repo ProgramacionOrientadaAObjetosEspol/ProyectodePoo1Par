@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectodepoo1par;
 
-/**
- *
- * @author Melanie
- */
 public class Profesor extends Miembros {
     
     private String fechaRegistro;
@@ -28,6 +19,9 @@ public class Profesor extends Miembros {
         this.fechaRegistro = fechaRegistro;
     }
     
-
+    @Override
+    public void TipoMago() {
+        //Animagos, Metamorfomago y Normal
+    }
 }
 
