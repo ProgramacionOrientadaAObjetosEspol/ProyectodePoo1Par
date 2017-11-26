@@ -4,3 +4,4 @@ Harry,Potter,16,acebo,Griffindor,N
 Draco,Malfoy,16,espino,Slytherin,N
 Colin,Creevey,12,cedro,Ravenclaw,A
 Darly,Guerrero,21,Cedro,sabf,M
+Steven,Araujo,19,NB,Dflor,A

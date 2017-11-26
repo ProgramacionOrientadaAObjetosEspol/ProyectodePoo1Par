@@ -1,14 +1,20 @@
 
 package OpcPlanificador;
 
+import IntefazPrin.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import proyectodepoo1par.Estudiante;
 import proyectodepoo1par.ReadWriter;
 
 
 public class EstudianteRegistro {
+    Scanner datos = new Scanner(System.in);
+    String op_crear = "";
+    Estudiante estudiante =null;
+    Object tipo = null;
     
-    public ArrayList<String> crearLista(String nombre,String apellido,String edad, String varita,String casa,String tipo){
+    public void crearLista(String nombre,String apellido,String edad, String varita,String casa,String tipo){
         ReadWriter archivo = new ReadWriter();
         
         ArrayList<String> listaDatos = new ArrayList<>();
@@ -20,17 +26,10 @@ public class EstudianteRegistro {
         listaDatos.add(tipo);
         
         archivo.AgregarAlArchivo(listaDatos, "estudiantes.txt");
-        
-        
-        return listaDatos;
     }   
-    public void crear(){   
-        ArrayList<String> informacion = new ArrayList<>();
-        EstudianteRegistro ob = new EstudianteRegistro();
-        
-        
+    
+    public void pedirDatos(){
         System.out.println("CREAR ESTUDIANTE");
-        Scanner datos = new Scanner(System.in);
         System.out.print("Ingrese nombre: ");
         String nombre = datos.nextLine();
         System.out.print("Ingrese apellido: ");
@@ -42,33 +41,38 @@ public class EstudianteRegistro {
         String varita = datos.nextLine();
         System.out.print("Casa: ");
         String casa = datos.nextLine();
-
-        System.out.println("Tipos de Magos/Brujas");
-        System.out.println("1. Animago \n2. Metamorfomago \n3. Normal ");
-        System.out.println("");
-        System.out.print("Elija el tipo de mago/bruja que es: ");
-        int opc = datos.nextInt();
-        datos.hasNextLine();
-        while (true) {
-            Scanner val = new Scanner(System.in);
-            if (opc == 1) {
-                //Animagos animago = new Animagos(animal, null);
-                ob.crearLista(nombre,apellido,String.valueOf(edad),varita,casa,"A");
-                
-                break;
-            }
-            if (opc == 2) {
-                //Metamorfomago metamorfomago = new Metamorfomago(pocion);
-                ob.crearLista(nombre,apellido,String.valueOf(edad),varita,casa,"M");
-                break;
-            }
-            if (opc == 3) {
-                //Normal normal = new Normal(deporte);
-                ob.crearLista(nombre,apellido,String.valueOf(edad),varita,casa,"N");
-                break;
-            }
-            else{
-                System.out.println("Opcion incorrecta! ");
+        
+        estudiante = new Estudiante(edad, casa, varita, nombre, apellido);
     }
     
-}}}
+    public void crear(){   
+        pedirDatos();
+        tipo = estudiante.TipoMago();
+        
+        //crear
+        System.out.print("\n¿Desea guardar los datos? (S/N) ");
+        op_crear = datos.nextLine();
+        System.out.println();
+        
+        if(op_crear.equals("S")){
+            if(tipo instanceof Animagos){
+                crearLista(estudiante.getNombre(), estudiante.getApellido(),String.valueOf(estudiante.getEdad()), estudiante.getVarita(), estudiante.getCasa(),"A");
+            }else if(tipo instanceof Metamorfomago){
+                crearLista(estudiante.getNombre(), estudiante.getApellido(),String.valueOf(estudiante.getEdad()), estudiante.getVarita(), estudiante.getCasa(),"M");
+            }else if(tipo instanceof Normal){
+                crearLista(estudiante.getNombre(), estudiante.getApellido(),String.valueOf(estudiante.getEdad()), estudiante.getVarita(), estudiante.getCasa(),"N");
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        if(op_crear.equals("S")){
+            return("Sus datos se han guardado correctamente.\n");
+        }else {
+            return("No se han gurdado sus datos.\n");
+        }
+    }
+    
+    
+}

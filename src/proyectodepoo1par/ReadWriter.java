@@ -52,10 +52,10 @@ public class ReadWriter {
                         if(n<a){
                             oracion+=palabra+",";
                         }else{
-                            oracion+=palabra;
+                            oracion+=palabra + "\n";
                         }
                     }
-                    fichero.write(oracion + "\n");
+                    fichero.write(oracion);
 		}
             fichero.close();    //cerramos
             } catch (Exception ex) {

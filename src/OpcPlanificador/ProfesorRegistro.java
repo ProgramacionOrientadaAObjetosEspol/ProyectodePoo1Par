@@ -1,17 +1,20 @@
 
 package OpcPlanificador;
 
+import IntefazPrin.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import proyectodepoo1par.Profesor;
 import proyectodepoo1par.ReadWriter;
 
 
 public class ProfesorRegistro {
+    Scanner datos = new Scanner(System.in);
+    String op_crear ="";
+    Profesor profesor = null;
+    Object tipo = null;
     
-    private String fechaRegistro;
-    
-    
-    public ArrayList<String> crearLista(String nombre,String apellido,String edad, String varita,String fechaIngreso, String tipo,String animal,String hechizo, String pocion, String deporte){
+    public void crearLista(String nombre,String apellido,String edad, String varita,String fechaIngreso, String tipo,String animal,String hechizo, String pocion, String deporte){
         ReadWriter archivo = new ReadWriter();
         
         ArrayList<String> listaDatos = new ArrayList<>();
@@ -27,20 +30,10 @@ public class ProfesorRegistro {
         listaDatos.add(deporte);
         
         archivo.AgregarAlArchivo(listaDatos, "profesores.txt");
-        
-        
-        return listaDatos;
     }   
     
-    
-    public void crear(){
-        
-        ArrayList<String> informacion = new ArrayList<>();
-        ProfesorRegistro ob = new ProfesorRegistro();
-        
-        
+    public void pedirDatos(){
         System.out.println("CREAR PROFESOR");
-        Scanner datos = new Scanner(System.in);
         System.out.print("Ingrese nombre: ");
         String nombre = datos.nextLine();
         System.out.print("Ingrese apellido: ");
@@ -51,55 +44,39 @@ public class ProfesorRegistro {
         System.out.print("Varita: ");
         String varita = datos.nextLine();
         System.out.print("Fecha de ingreso: ");
-        String fecha = datos.nextLine();
+        String fechaRegistro = datos.nextLine();
+        
+        profesor = new Profesor(fechaRegistro,edad, "null", varita, nombre, apellido);
+    }
+    
+    public void crear(){
+        pedirDatos();
+        tipo = profesor.TipoMago();
 
-        System.out.println("Tipos de Magos/Brujas");
-        System.out.println("1. Animago \n2. Metamorfomago \n3. Normal ");
-        System.out.println("");
-        System.out.print("Elija el tipo de mago/bruja que es: ");
-        int opc = datos.nextInt();
-        datos.hasNextLine();
-        while (true) {
-            Scanner val = new Scanner(System.in);
-            if (opc == 1) {
-                System.out.print("En que clase de animal puede convertirse?: ");
-                String animal = val.nextLine();
-                               
-                System.out.print("Ingrese su hechizo: ");
-                String hechizo = val.nextLine();
-                //Animagos animago = new Animagos(animal, null);
-                ob.crearLista(nombre,apellido,String.valueOf(edad),varita,fecha,"A",animal,hechizo,"null","null");
-                
-                break;
+        //crear
+        System.out.print("\n¿Desea guardar los datos? (S/N) ");
+        op_crear = datos.nextLine();
+        System.out.println();
+        
+        if(op_crear.equals("S")){
+            if(tipo instanceof Animagos){
+                crearLista(profesor.getNombre(), profesor.getApellido(), String.valueOf(profesor.getEdad()), profesor.getVarita(), profesor.getFechaRegistro(), "A", profesor.getAnimagoAnimal(), profesor.getAnimagoHechizo(),"null","null");
+            }else if(tipo instanceof Metamorfomago){
+                crearLista(profesor.getNombre(), profesor.getApellido(), String.valueOf(profesor.getEdad()), profesor.getVarita(), profesor.getFechaRegistro(), "M", "null","null",profesor.getMetamorfoPocion(),"null");
+            }else if(tipo instanceof Normal){
+                crearLista(profesor.getNombre(), profesor.getApellido(), String.valueOf(profesor.getEdad()), profesor.getVarita(), profesor.getFechaRegistro(), "N", "null","null","null", profesor.getNormalDeporte());
             }
-            if (opc == 2) {
-                System.out.print("Ingrese su pocion: ");
-                String pocion = val.nextLine();
-                
-                //Metamorfomago metamorfomago = new Metamorfomago(pocion);
-                ob.crearLista(nombre,apellido,String.valueOf(edad),varita,fecha,"M","null","null",pocion,"null");
-                break;
-            }
-            if (opc == 3) {
-                System.out.print("Que clase de deporte practica: ");
-                String deporte = val.nextLine();
-                
-                //Normal normal = new Normal(deporte);
-                ob.crearLista(nombre,apellido,String.valueOf(edad),varita,fecha,"N","null","null","null",deporte);
-                break;
-            }
-            else{
-                System.out.println("Opcion incorrecta! ");
+            System.out.println("Sus datos se han guardado correctamente\n");
         }
-    }   
     }
 
-    public String getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(String fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    @Override
+    public String toString() {
+        if(op_crear.equals("S")){
+            return("Sus datos se han guardado correctamente.\n");
+        }else {
+            return("No se han gurdado sus datos.\n");
+        }   
     }
     
     

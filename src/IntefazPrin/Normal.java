@@ -7,6 +7,10 @@ public class Normal implements Volador{
         this.deporte = deporte;
     }
 
+    public Normal() {
+    }
+    
+
     public String getDeporte() {
         return deporte;
     }

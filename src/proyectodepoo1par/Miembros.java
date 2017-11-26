@@ -13,6 +13,15 @@ public class Miembros extends Rol {
         this.varita = varita;
     }
 
+    public Miembros(int edad, String casa, String varita, String nombre, String apellido) {
+        super(nombre, apellido);
+        this.edad = edad;
+        this.casa = casa;
+        this.varita = varita;
+    }
+    
+    
+
     public void setEdad(int edad) {
         this.edad = edad;
     }
@@ -38,8 +47,9 @@ public class Miembros extends Rol {
     }
 
     @Override
-    public void TipoMago() {
+    public Object TipoMago() {
         //Animagos, Metamorfomago y Normal
+        return null;
     }
 
 }

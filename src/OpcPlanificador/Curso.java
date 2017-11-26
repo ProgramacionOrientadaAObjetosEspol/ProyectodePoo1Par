@@ -8,12 +8,14 @@ import proyectodepoo1par.ReadWriter;
 
 public class Curso {
 
-    private String fechaRegistro;
+    //atributos
     Scanner t = new Scanner(System.in);
+    int op = 0;
+    ArrayList<String> datos = new ArrayList<>();
 
+    //metodos
     public void crear() {
         ArrayList<ArrayList<String>> lineas = new ArrayList<>();
-        ArrayList<String> datos = new ArrayList<>();
         String nombres, apellidos;
         ReadWriter archivo = new ReadWriter();
 
@@ -76,7 +78,6 @@ public class Curso {
         nombres = lineas.get(op_profesor).get(0);
         apellidos = lineas.get(op_profesor).get(1);
 
-        int op = 0;
         if (op_crear.equals("S")) {
             lineas.clear();
             lineas = archivo.leerArchivo("cursos.txt");
@@ -91,13 +92,6 @@ public class Curso {
 
         if (op == 0) {
             lineas.clear();
-            System.out.println("Se ha creado el curso:");
-            System.out.println("Materia:" + arr[op_materias - 1]);
-            System.out.println("Profesor:" + nombres + " " + apellidos);
-            System.out.println("Capacidad:" + op_capacidad);
-            System.out.println("Horario:" + op_horario);
-            System.out.println();
-
             datos.add(arr[op_materias - 1].toString());
             datos.add(nombres + " " + apellidos);
             datos.add(op_dia);
@@ -105,17 +99,16 @@ public class Curso {
             datos.add(String.valueOf(op_capacidad));
 
             archivo.AgregarAlArchivo(datos, "cursos.txt");
-        } else {
-            System.out.println("No se ha creado el cursos\n");
         }
     }
 
-    public String getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(String fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    @Override
+    public String toString() {
+        if (op == 0) {
+            return("Se ha creado el curso:\nMateria: " + datos.get(0) + "\nProfesor: " + datos.get(1) + "\nCapacidad: " + datos.get(4)+ "\nHorario: " + datos.get(3));
+        } else {
+            return("No se ha creado el cursos\n");
+        }
     }
 
 }

@@ -2,3 +2,4 @@ materia,profesor,dia,horario,capacidad
 Defensa contra las artes oscuras,null,martes,09:30-11:30,15
 Pociones,null,miercoles,13:30-15:30,10
 Adivinacion,null,miercoles,13:30-15:30,10
+Vuelo,Steven Araujo,jueves,11:30-13:30,15

@@ -7,7 +7,8 @@ public class HechiceroPlanificador extends Rol {
     }
 
     @Override
-    public void TipoMago() {
+    public Object TipoMago() {
         //Animagos, Metamorfomago y Normal
+        return null;
     }
 }

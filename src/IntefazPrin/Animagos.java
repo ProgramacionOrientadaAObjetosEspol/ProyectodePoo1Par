@@ -9,6 +9,9 @@ public class Animagos implements Volador{
         this.hechizo = hechizo;
     }
 
+    public Animagos() {
+    }
+
     public String getAnimal() {
         return animal;
     }

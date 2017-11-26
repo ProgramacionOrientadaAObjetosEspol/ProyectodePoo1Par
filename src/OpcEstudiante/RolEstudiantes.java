@@ -1,9 +1,11 @@
 package OpcEstudiante;
 
 public class RolEstudiantes {
-
-    public void crearCurso() {
-
+    Planificacion p = new Planificacion();
+    
+    public void VerCurso() {
+        p.planificar();
+        
     }
 
     public void registrar() {

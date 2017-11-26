@@ -7,6 +7,9 @@ public class Metamorfomago implements Volador {
         this.posión = posión;
     }
 
+    public Metamorfomago() {
+    }
+
     public String getPosión() {
         return posión;
     }

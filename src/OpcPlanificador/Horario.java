@@ -8,17 +8,15 @@ import proyectodepoo1par.ReadWriter;
 public class Horario {
 
     Scanner t = new Scanner(System.in);
-    ArrayList<ArrayList<String>> lineasCurso = new ArrayList<>();
-    ArrayList<ArrayList<String>> lineasRegistro = new ArrayList<>();
-    
+    private ArrayList<ArrayList<String>> lineasCurso = new ArrayList<>();
+    private ArrayList<ArrayList<String>> lineasRegistro = new ArrayList<>();
+    private int op_materias,contador=0;
+    private Object[] arr = Materias.values();        //Materias en array
     
     public void planificador() {
 
         ReadWriter archivo = new ReadWriter();
-        Object[] arr = Materias.values();        //Materias en array
-
-        //variables
-        int op_materias,contador=0;
+        
         lineasCurso = archivo.leerArchivo("cursos.txt");
         lineasRegistro = archivo.leerArchivo("registro.txt");
         
@@ -34,20 +32,20 @@ public class Horario {
         t.nextLine();
         System.out.println("\n");
 
-        for (ArrayList<String> palabra : lineasRegistro) {
-           if (palabra.get(3).equals(arr[op_materias - 1].toString())) {
+        for (ArrayList<String> linea : lineasRegistro) {
+           if (linea.get(3).equals(arr[op_materias - 1].toString())) {
                contador ++;
            }
         }
-        for (ArrayList<String> linea : lineasCurso) {
-            if (linea.get(0).equals(arr[op_materias - 1].toString())) {
-                System.out.println("MATERIAS: " + linea.get(0) + "\n" + "PROFESOR: " + linea.get(1) + "\n" +"HORARIO: "+linea.get(2)+", "+linea.get(3)+"\n" +"REGISTRADOS: "+contador);
-            }
-        }
     }
 
-//    @Override
-//    public String toString() {
-//        return ("MATERIAS: " + lineas.get(0) + "\n" + "PROFESOR: " + lineas.get(1));
-//    }
+    @Override
+    public String toString() {
+        for (ArrayList<String> linea : lineasCurso) {
+            if (linea.get(0).equals(arr[op_materias - 1].toString())) {
+                return ("MATERIAS: " + linea.get(0) + "\nPROFESOR: " + linea.get(1) + "\nHORARIO: "+linea.get(2)+", "+linea.get(3)+"\nREGISTRADOS: "+contador);
+            }
+        }
+        return "";
+    }
 }

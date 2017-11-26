@@ -15,6 +15,13 @@ public class Rol {
         this.rol = rol;
     }
 
+    public Rol(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    
+    
+
     public String getUsuario() {
         return usuario;
     }
@@ -55,7 +62,8 @@ public class Rol {
         this.rol = rol;
     }
     
-    public void TipoMago(){
+    public Object TipoMago(){
         //Animagos, Metamorfomago y Normal
+        return null;
     }
 }
