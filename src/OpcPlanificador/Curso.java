@@ -15,7 +15,10 @@ public class Curso {
 
     //metodos
     public void crear() {
+        //lineas de profesores
         ArrayList<ArrayList<String>> lineas = new ArrayList<>();
+        //lineas de cursos
+        ArrayList<ArrayList<String>> lineas1 = new ArrayList<>();
         String nombres, apellidos;
         ReadWriter archivo = new ReadWriter();
 
@@ -23,6 +26,7 @@ public class Curso {
         int op_materias, op_profesor, op_capacidad;
         String op_dia, op_horario, op_crear, profesor;
         lineas = archivo.leerArchivo("profesores.txt");
+        lineas1 = archivo.leerArchivo("cursos.txt");
 
         Object[] arr = Materias.values();        //Materias en array
 
@@ -38,7 +42,16 @@ public class Curso {
         t.nextLine();
         System.out.println("\n");
 
-        //Profesores
+        //Para verificar que ya está esa materia
+        //Ya que solo se puede crear un curso por materia
+        for (ArrayList<String> linea : lineas1) {
+            if (linea.get(0).equals(arr[op_materias - 1].toString())) {
+                op++;
+            }
+        }
+        
+        if(op == 0){
+            //Profesores
         System.out.println("/** Profesores **/ \n");
         n = 0;
         for (ArrayList<String> linea : lineas) {
@@ -47,7 +60,7 @@ public class Curso {
             }
             n++;
         }
-        System.out.print("Elija una profesor del listado de profesores: ");
+        System.out.print("Elija un profesor del listado de profesores: ");
         op_profesor = t.nextInt();
         t.nextLine();
         System.out.println();
@@ -80,8 +93,7 @@ public class Curso {
 
         if (op_crear.equals("S")) {
             lineas.clear();
-            lineas = archivo.leerArchivo("cursos.txt");
-            for (ArrayList<String> linea : lineas) {
+            for (ArrayList<String> linea : lineas1) {
                 if (((linea.get(3).equals(op_horario)) && (linea.get(2).equals(op_dia))) || (linea.get(0).equals(arr[op_materias - 1].toString()))) {
                     op++;
                 }
@@ -90,8 +102,8 @@ public class Curso {
             op++;
         }
 
-        if (op == 0) {
-            lineas.clear();
+        if (op == 0) { //Guardando los datos
+            lineas1.clear();
             datos.add(arr[op_materias - 1].toString());
             datos.add(nombres + " " + apellidos);
             datos.add(op_dia);
@@ -100,6 +112,7 @@ public class Curso {
 
             archivo.AgregarAlArchivo(datos, "cursos.txt");
         }
+        }else{ System.out.println("La materia ya tiene un curso");}
     }
 
     @Override

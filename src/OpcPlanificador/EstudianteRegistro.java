@@ -14,6 +14,7 @@ public class EstudianteRegistro {
     Estudiante estudiante =null;
     Object tipo = null;
     
+    //Agregar al archivo
     public void crearLista(String nombre,String apellido,String edad, String varita,String casa,String tipo){
         ReadWriter archivo = new ReadWriter();
         
@@ -45,8 +46,10 @@ public class EstudianteRegistro {
         estudiante = new Estudiante(edad, casa, varita, nombre, apellido);
     }
     
+    //Pricipal
     public void crear(){   
         pedirDatos();
+        //definimos el tipo de mago con el objeto de estudainte
         tipo = estudiante.TipoMago();
         
         //crear
@@ -54,6 +57,7 @@ public class EstudianteRegistro {
         op_crear = datos.nextLine();
         System.out.println();
         
+        //Guardar dependiendo del tipo de mago
         if(op_crear.equals("S")){
             if(tipo instanceof Animagos){
                 crearLista(estudiante.getNombre(), estudiante.getApellido(),String.valueOf(estudiante.getEdad()), estudiante.getVarita(), estudiante.getCasa(),"A");

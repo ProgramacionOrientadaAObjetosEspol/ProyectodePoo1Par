@@ -31,7 +31,8 @@ public class Horario {
         op_materias = t.nextInt();
         t.nextLine();
         System.out.println("\n");
-
+        
+        //Cuenta cuantos alumnos hay en esa clase
         for (ArrayList<String> linea : lineasRegistro) {
            if (linea.get(3).equals(arr[op_materias - 1].toString())) {
                contador ++;

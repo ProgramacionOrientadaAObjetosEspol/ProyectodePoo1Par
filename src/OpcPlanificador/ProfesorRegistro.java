@@ -14,6 +14,7 @@ public class ProfesorRegistro {
     Profesor profesor = null;
     Object tipo = null;
     
+    //Guardamos al profesor
     public void crearLista(String nombre,String apellido,String edad, String varita,String fechaIngreso, String tipo,String animal,String hechizo, String pocion, String deporte){
         ReadWriter archivo = new ReadWriter();
         
@@ -32,6 +33,7 @@ public class ProfesorRegistro {
         archivo.AgregarAlArchivo(listaDatos, "profesores.txt");
     }   
     
+    //Pedir los datos
     public void pedirDatos(){
         System.out.println("CREAR PROFESOR");
         System.out.print("Ingrese nombre: ");
@@ -49,8 +51,10 @@ public class ProfesorRegistro {
         profesor = new Profesor(fechaRegistro,edad, "null", varita, nombre, apellido);
     }
     
+    //Principal
     public void crear(){
         pedirDatos();
+        //Pedimos los datos con el objeto profesor
         tipo = profesor.TipoMago();
 
         //crear
