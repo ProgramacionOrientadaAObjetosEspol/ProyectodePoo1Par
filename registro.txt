@@ -1,0 +1,4 @@
+fecha,nombres,apellidos,materia,tipo
+20/11/2017,Colin,Creevey,Adivinacion,E
+21/11/2017,Harry,Potter,Adivinacion,N
+20/11/2017,Hermione,Granger,Herbologia,N

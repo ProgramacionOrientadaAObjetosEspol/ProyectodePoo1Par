@@ -16,7 +16,9 @@ import proyectodepoo1par.ReadWriter;
  */
 public class RolPlanificador {
     public void crearCurso(){ 
-        }
+        Curso ob = new Curso();
+        ob.crear();
+    }
     public void crearProfesor(){   
         
     }

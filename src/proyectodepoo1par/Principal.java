@@ -37,6 +37,7 @@ public class Principal {
             contraseña = t.nextLine();
 
             lineas = archivo.leerArchivo("usuarios.txt");
+
             
             int validacion_ingreso = 0;
             
