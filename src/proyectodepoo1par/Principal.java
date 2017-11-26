@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Principal {
     public static void main(String[] args){
         Scanner t = new Scanner(System.in);
@@ -55,14 +56,22 @@ public class Principal {
                 if(validacion.equals("planificador")){
                     planificador = new RolPlanificador();
                     System.out.println("1. Crear Curso \n2. Crear Profesor \n3. Crear Estudiante \n4. Ver Horarios Planificados \n5. Listado de estudiantes ");
+                    System.out.print("Ingrese una opcion: ");
                     opcion = t.nextInt();
                     t.nextLine();
+                    System.out.println("");
                     if(opcion == 1){planificador.crearCurso();}
+                    if(opcion == 2){planificador.crearProfesor();}
+                    if(opcion == 3){planificador.crearEstudiante();}
+                    if(opcion == 4){planificador.verHorarios();}
+       
+                    
                 }else{
                     estudiante = new RolEstudiantes();
                     System.out.println("1. Ver cursos planificados\n2. Registro\n3. Descripcion de vuelo\n ");
                     opcion = t.nextInt();
                     if(opcion == 1){estudiante.crearCurso();}
+                    
                 }
             }
             else{System.out.println("El usuario o la contraseña no son válidos. Por favor intente otra vez.");break;}

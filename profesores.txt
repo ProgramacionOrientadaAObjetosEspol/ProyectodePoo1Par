@@ -2,3 +2,4 @@ nombres,apellidos,edad,varita,fechaIngreso,tipo,animal,hechizo,pocion,deporte
 Severus,Snape,45,cedro,14/04/2015,A,gato,hechizol,null,null
 Nimphadora,Tonks,30,pino negro,12/07/2012,M,null,null,posion multijugos,null
 Albus,Dumbledore,178,sauco,18/10/1900,N,null,null,null,quidditch
+Darly,Guerrero,21,Cedro,26/11/2017,A,gato,dhsggh,null,null
