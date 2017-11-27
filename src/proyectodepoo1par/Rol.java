@@ -20,6 +20,10 @@ public class Rol {
         this.apellido = apellido;
     }
     
+    public Rol(String usuario) {
+        this.usuario = usuario;
+        
+    }
     
 
     public String getUsuario() {

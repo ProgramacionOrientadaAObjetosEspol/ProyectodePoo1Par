@@ -17,6 +17,7 @@ public class Estudiante extends Miembros {
         super(edad, casa, varita, nombre, apellido);
     }
     
+    
     @Override
     public Object TipoMago() {
         System.out.println("Tipos de Magos/Brujas");
