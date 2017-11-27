@@ -8,8 +8,10 @@ public class RolEstudiantes {
         System.out.println(p.toString()+"\n");
     }
 
-    public void registrar() {
-
+    public void registrar(String usuario, String contraseña) {
+        Registro r = new Registro(usuario, contraseña);
+        r.registrar();
+        System.out.println(r.toString());
     }
 
     public void describir(String usuario, String contraseña) {

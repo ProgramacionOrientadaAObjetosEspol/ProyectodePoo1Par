@@ -57,7 +57,7 @@ public class Principal {
                         opcion = t.nextInt();
                         System.out.println("");
                         if(opcion == 1){estudiante.VerCurso();}
-                        else if(opcion == 2){;}
+                        else if(opcion == 2){estudiante.registrar(usuario, contraseña);}
                         else if(opcion == 3){;}
                         else if(opcion == 4){
                             System.out.println("Sesion cerrada.\nGracias por usar el programa.\n----------------------------------------------------------------------------");

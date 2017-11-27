@@ -13,6 +13,7 @@ public class Curso {
     int op = 0;
     ArrayList<String> datos = new ArrayList<>();
 
+    
     //metodos
     public void crear() {
         //lineas de profesores
@@ -51,69 +52,67 @@ public class Curso {
         }
         
         if(op == 0){
-            //Profesores
-        System.out.println("/** Profesores **/ \n");
-        n = 0;
-        for (ArrayList<String> linea : lineas) {
-            if (n != 0) {
-                System.out.println(n + ". " + linea.get(0) + " " + linea.get(1));
-            }
-            n++;
-        }
-        System.out.print("Elija un profesor del listado de profesores: ");
-        op_profesor = t.nextInt();
-        t.nextLine();
-        System.out.println();
-        //borramos las lineas en la memoria
-
-        //Capacidad
-        System.out.print("Ingrese la capacidad del curso para " + arr[op_materias - 1] + ": ");
-        op_capacidad = t.nextInt();
-        t.nextLine();
-        System.out.println();
-
-        //dia
-        System.out.print("Ingrese el dia: ");
-        op_dia = t.nextLine();
-        System.out.println();
-
-        //horario
-        System.out.print("Ingrese el horario del curso: ");
-        op_horario = t.nextLine();
-        System.out.println();
-
-        //crear
-        System.out.print("Desea crear el curso con la informacion establecida? (S/N) ");
-        op_crear = t.nextLine();
-        System.out.println();
-
-        //condicion
-        nombres = lineas.get(op_profesor).get(0);
-        apellidos = lineas.get(op_profesor).get(1);
-
-        if (op_crear.equals("S")) {
-            lineas.clear();
-            for (ArrayList<String> linea : lineas1) {
-                if (((linea.get(3).equals(op_horario)) && (linea.get(2).equals(op_dia))) || (linea.get(0).equals(arr[op_materias - 1].toString()))) {
-                    op++;
+                //Profesores
+            System.out.println("/** Profesores **/ \n");
+            n = 0;
+            for (ArrayList<String> linea : lineas) {
+                if (n != 0) {
+                    System.out.println(n + ". " + linea.get(0) + " " + linea.get(1));
                 }
+                n++;
             }
-        } else {
-            op++;
-        }
+            System.out.print("Elija un profesor del listado de profesores: ");
+            op_profesor = t.nextInt();
+            t.nextLine();
 
-        if (op == 0) { //Guardando los datos
-            lineas1.clear();
-            datos.add(arr[op_materias - 1].toString());
-            datos.add(nombres + " " + apellidos);
-            datos.add(op_dia);
-            datos.add(op_horario);
-            datos.add(String.valueOf(op_capacidad));
+            //Capacidad
+            System.out.print("\nIngrese la capacidad del curso para " + arr[op_materias - 1] + ": ");
+            op_capacidad = t.nextInt();
+            t.nextLine();
 
-            archivo.AgregarAlArchivo(datos, "cursos.txt");
-        }
+            //dia
+            System.out.print("\nIngrese el dia: ");
+            op_dia = t.nextLine();
+            System.out.println();
+
+            //horario
+            System.out.print("\nIngrese el horario del curso: ");
+            op_horario = t.nextLine();
+
+            //crear
+            System.out.print("\nDesea crear el curso con la informacion establecida? (S/N) ");
+            op_crear = t.nextLine();
+            System.out.println();
+
+            //condicion
+            nombres = lineas.get(op_profesor).get(0);
+            apellidos = lineas.get(op_profesor).get(1);
+
+            if (op_crear.equals("S")) {
+                lineas.clear();
+                for (ArrayList<String> linea : lineas1) {
+                    if (((linea.get(3).equals(op_horario)) && (linea.get(2).equals(op_dia))) || (linea.get(0).equals(arr[op_materias - 1].toString()))) {
+                        op++;
+                    }
+                }
+            } else {
+                op++;
+            }
+
+            //Guardando los datos
+            if (op == 0) { 
+                lineas1.clear();
+                datos.add(arr[op_materias - 1].toString());
+                datos.add(nombres + " " + apellidos);
+                datos.add(op_dia);
+                datos.add(op_horario);
+                datos.add(String.valueOf(op_capacidad));
+
+                archivo.AgregarAlArchivo(datos, "cursos.txt");
+            }
         }else{ System.out.println("La materia ya tiene un curso");}
     }
+    
 
     @Override
     public String toString() {

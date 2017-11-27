@@ -35,14 +35,12 @@ public class Planificacion {
     
     @Override
     public String toString() {
-        int n=0;
         for (ArrayList<String> linea : lineasCurso) {
             if (linea.get(0).equals(arr[op_materias-1].toString())) {
-                n++;
                 return ("MATERIAS: " + linea.get(0) + "\nPROFESOR: " + linea.get(1) + "\nHORARIO: "+linea.get(2)+", "+linea.get(3));
             }
-        }if (n==0){System.out.println("Esta materia no posee curso asignado.");}
-        return "";
+        }
+        return ("Esta materia no posee curso asignado.");
     }
     
 }

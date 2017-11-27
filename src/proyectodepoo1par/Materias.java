@@ -9,6 +9,4 @@ public enum Materias {
     public String toString(){
         return nom;
     }
-    
-    
 }   
