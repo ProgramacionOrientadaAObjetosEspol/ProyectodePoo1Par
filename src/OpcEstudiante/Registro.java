@@ -1,6 +1,8 @@
 package OpcEstudiante;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
@@ -90,10 +92,18 @@ public class Registro {
     
     public void registrarArchivo(){
         lineas2 = new ArrayList<>();
-//FECHA
+        
+        //FECHA
+        Calendar fecha = new GregorianCalendar();
+        //Obtenemos el valor del año, mes, día, 
+        //hora, minuto y segundo del sistema
+        //usando el método get y el parámetro correspondiente
+        int año = fecha.get(Calendar.YEAR);
+        int mes = fecha.get(Calendar.MONTH);
+        int dia = fecha.get(Calendar.DAY_OF_MONTH);
+        String f = Integer.toString(dia)+"/"+String.valueOf(mes+1)+"/"+String.valueOf(año);
 
-
-        lineas2.add(fecha);
+        lineas2.add(f);
         lineas2.add(nombre);
         lineas2.add(apellido);
         lineas2.add(arr[op_materias-1].toString());
@@ -117,5 +127,5 @@ public class Registro {
     }
 }
 
+//Falta!
 //Aumentar el numero ede registrados en ese curso
-//REgistrar la fecha

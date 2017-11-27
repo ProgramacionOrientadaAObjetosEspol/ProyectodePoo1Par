@@ -9,9 +9,11 @@ import proyectodepoo1par.ReadWriter;
 public class Curso {
 
     //atributos
-    Scanner t = new Scanner(System.in);
+    static Scanner t = new Scanner(System.in);
     int op = 0;
     ArrayList<String> datos = new ArrayList<>();
+    static int op_materias, n = 1;;
+    static Object[] arr = Materias.values();                //Materias en array
 
     
     //metodos
@@ -24,27 +26,15 @@ public class Curso {
         ReadWriter archivo = new ReadWriter();
 
         //variables
-        int op_materias, op_profesor, op_capacidad;
+        int op_profesor, op_capacidad;
         String op_dia, op_horario, op_crear, profesor;
         lineas = archivo.leerArchivo("profesores.txt");
         lineas1 = archivo.leerArchivo("cursos.txt");
 
-        Object[] arr = Materias.values();        //Materias en array
-
-        //Materias
-        System.out.println("\n/** MATERIAS **/ \n");
-        int n = 1;
-        for (Object i : arr) {
-            System.out.println(n + ". " + i);
-            n++;
-        }
-        System.out.print("Elija una materia del listado de materias: ");
-        op_materias = t.nextInt();
-        t.nextLine();
-        System.out.println("\n");
-
-        //Para verificar que ya está esa materia
-        //Ya que solo se puede crear un curso por materia
+        //Elegir las materias
+        eligirMateria();
+        op = 0;
+        
         for (ArrayList<String> linea : lineas1) {
             if (linea.get(0).equals(arr[op_materias - 1].toString())) {
                 op++;
@@ -73,7 +63,6 @@ public class Curso {
             //dia
             System.out.print("\nIngrese el dia: ");
             op_dia = t.nextLine();
-            System.out.println();
 
             //horario
             System.out.print("\nIngrese el horario del curso: ");
@@ -123,4 +112,17 @@ public class Curso {
         }
     }
 
+    public static void eligirMateria(){
+        //Materias
+        n =1;
+        System.out.println("\n/** MATERIAS **/ \n");
+        for (Object i : arr) {
+            System.out.println(n + ". " + i);
+            n++;
+        }
+        System.out.print("Elija una materia del listado de materias: ");
+        op_materias = t.nextInt();
+        t.nextLine();
+        System.out.println("\n");
+    }
 }
