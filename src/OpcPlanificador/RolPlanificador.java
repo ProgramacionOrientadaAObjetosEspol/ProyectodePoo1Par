@@ -32,6 +32,8 @@ public class RolPlanificador {
 
     //Opcion 5
     public void listadorEstudiante() {
-
+        Lista ob1 = new Lista();
+        ob1.listar();
+        //System.out.println(ob1.toString());
     }
 }

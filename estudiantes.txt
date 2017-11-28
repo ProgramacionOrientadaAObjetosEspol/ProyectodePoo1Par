@@ -1,8 +1,7 @@
-nombres,apellidos,edad,varita,casa,tipo
 Hermione,Granger,16,vid,Griffindor,N
 Harry,Potter,16,acebo,Griffindor,N
 Draco,Malfoy,16,espino,Slytherin,N
 Colin,Creevey,12,cedro,Ravenclaw,A
 Darly,Guerrero,21,Cedro,sabf,M
 Steven,Araujo,19,NB,Dflor,A
-b,b,15,asd,aca,M
+B,b,15,asd,aca,M

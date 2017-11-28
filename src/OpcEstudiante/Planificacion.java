@@ -7,7 +7,7 @@ import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
 
 
-public class Planificacion {
+public class Planificacion { 
     Scanner t = new Scanner(System.in);
     private ArrayList<ArrayList<String>> lineasCurso = new ArrayList<>();
     private int op_materias=0;

@@ -42,7 +42,7 @@ public class Principal {
                         else if(opcion == 2){planificador.crearProfesor();}
                         else if(opcion == 3){planificador.crearEstudiante();}
                         else if(opcion == 4){planificador.verHorarios();}
-                        else if(opcion == 5){planificador.verHorarios();}
+                        else if(opcion == 5){planificador.listadorEstudiante();}
                         else if(opcion == 6){
                             System.out.println("Sesion cerrada.\nGracias por usar el programa.\n----------------------------------------------------------------------------");
                             break;
