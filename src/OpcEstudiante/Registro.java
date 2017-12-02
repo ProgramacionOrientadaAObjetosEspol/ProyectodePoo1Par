@@ -7,25 +7,112 @@ import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
 
-public class Registro {
-    //Atributos
-    private String usuario, contraseña;
-    public static String nombre, apellido, fecha;
-    static Scanner t = new Scanner(System.in);
-    ReadWriter archivo = null;
-    static int op_materias, extraodinario= 0;
-    static String op_crear;
-    ArrayList<ArrayList<String>> lineas = null;             //lineas de cursos
-    ArrayList<ArrayList<String>> lineas1 = null;            //lineas de estudiantes
-    ArrayList<String> lineas2 = null;            //Lineas a registar
-    static Object[] arr = Materias.values();                //Materias en array
+//Declaracion de la clase
+/**
+ * Clase Registro
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 
+public class Registro {
+    
+    //Declaracion de variables
+    
+    /**
+     * variable privada: Almancenara el usuario 
+     */
+    private String usuario; 
+    
+    /**
+     * variable privada: Almancenara la contraseña del usuario
+     */
+    private String contraseña;
+    
+     /**
+     * variable publica estatica: Almancenara el nombre del usuario
+     */
+    public static String nombre;
+    
+    /**
+     * variable publica estatica: Almancenara el apellido del usuario
+     */
+    public static String apellido;
+    
+    /**
+     * variable publica estatica: Almacenara la fecha de registro del estudiante 
+     */
+    public static String fecha;
+    
+    /**
+     * variable default estatica: Entrada de scanner 
+     */
+
+    static Scanner t = new Scanner(System.in);
+    
+    /**
+     * Objeto archivo de la clase ReadWriter inicializado null para su posterior uso
+     */
+    ReadWriter archivo = null;
+    
+    /**
+     * variable default estatica: Almacenara la opcion de materia que ingrese el usuario 
+     */
+    static int op_materias=0;
+    
+     /**
+     * variable default estatica: Contador para saber si el usuario cuenta con la edad 
+     * necesaria para ver la materia escogida
+     */
+    static int extraodinario= 0;
+    
+    /**
+     * variable default estatica: Almacena "S/N" si el usuario desea o no continuar con el proceso
+     */
+    static String op_crear;
+    
+    /**
+     * variable lineas: Almacenara las lineas del archivo curso.txt 
+     */
+    ArrayList<ArrayList<String>> lineas = null; 
+    
+    /**
+     * variable lineas1: Almacenara las lineas del archivo estudiantes.txt 
+     */
+    ArrayList<ArrayList<String>> lineas1 = null;
+    
+    /**
+     * variable lineas2: Almacenara las lineas del archivo registrar.txt 
+     */
+    ArrayList<String> lineas2 = null;
+    
+    /**
+     * variable estatica arr: Almacena en un array de objetos las materias
+     * de la clase enum Materias
+     */
+    static Object[] arr = Materias.values(); 
+    
+    //Declaracion del constructor
+    
+    /**
+     *Constructor de la clase 
+     * @param usuario 
+     * @param contraseña
+     */
     public Registro(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
     
-    //Metodos
+    //Declaracion del metodos
+    
+    /**
+     * 
+     * Metodo registrar: se encarga de leer la opcion de materia
+     * que el usuario ingrese, ademas valida que el usuario cumpla con la restriccion
+     * de edad para la materia que escogio
+     */
     public void registrar() {
         archivo = new ReadWriter();
         lineas = new ArrayList<>();
@@ -67,6 +154,10 @@ public class Registro {
         }
     }
     
+    /**
+     * Metodo elegirMateria: muestra las materias del arreglo 
+     * y le permite al usuario escoger una 
+     */
     public static void eligirMateria(){
         //Materias
         System.out.println("\n/** MATERIAS **/ \n");
@@ -81,6 +172,12 @@ public class Registro {
         System.out.println("\n");
     }
 
+    /**
+     * Metodo toString: muestra el mensaje de acuerdo a la opcion
+     * escogida por el usuario para continuar con el registro
+     * @return "Se ha registrado en la materia" si el estudiante ingreso la opcion "s"
+     * o "No se ha registrado en la materia" si el estudiano ingreso la opcion "N"
+     */
     @Override
     public String toString() {
         if (op_crear.equals("S")) {
@@ -90,6 +187,10 @@ public class Registro {
         }
     }
     
+    /**
+     * Metodo registrarArchivo: permite almacenar en el archivo
+     * "registro.txt" los datos del usuario obtenidos durante el registro
+     */
     public void registrarArchivo(){
         lineas2 = new ArrayList<>();
         
@@ -115,7 +216,11 @@ public class Registro {
         archivo.AgregarAlArchivo(lineas2, "registro.txt");
     }
     
-    //Obtener nombre y apellido
+    
+    /**
+     * Metodo getNomApe: permite obtener el nombre y el apellido
+     * del usuario mediante el recorrido el archivo "usuario.txt.2
+     */
     public void getNomApe(){
         lineas = archivo.leerArchivo("usuarios.txt");
         for(ArrayList<String> linea: lineas){
@@ -128,4 +233,4 @@ public class Registro {
 }
 
 //Falta!
-//Aumentar el numero ede registrados en ese curso
+//Aumentar el numero de registrados en ese curso

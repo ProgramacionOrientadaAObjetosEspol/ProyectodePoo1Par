@@ -6,20 +6,50 @@ import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
 
+//Declaracion de la clase
+/**
+ * Clase Planificacion 
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 
 public class Planificacion { 
+   
+    /**
+     * variable de entrada: t 
+     */
     Scanner t = new Scanner(System.in);
+    
+    /*
+     * variable privada lineasCurso: Array de array que contiene las lineas del documento curso.txt
+    */ 
     private ArrayList<ArrayList<String>> lineasCurso = new ArrayList<>();
+    
+    /**
+     * variable privada op_materias: Almacena el valor de la opcion de materia que escoja el usuario 
+     */
     private int op_materias=0;
-    //Materias en array
-        Object[] arr = Materias.values();    
+    
+    /**
+     * varaible array: Arreglo de materias del enum Materias 
+     */
+    Object[] arr = Materias.values();    
         
+    /**
+     * Declaracion del metodo planificar, permite leer el archivo curso.txt
+     * y de acuerdo la opcion de materia que ingresa el usuario obtener la 
+     * materia del arreglo lineasCurso 
+     * objecto archivo de la clase ReadWriter 
+     * variable lineasCurso: Almacena las lineas del archivo curso.txt
+     */
     public void planificar(){
         
         ReadWriter archivo = new ReadWriter();
         lineasCurso = archivo.leerArchivo("cursos.txt");
        
-        //Materias
+        
         System.out.println("\n/** CURSOS PLANIFICADOS **/ \n");
         int n = 1;
         for (Object i : arr) {
@@ -32,6 +62,11 @@ public class Planificacion {
         System.out.println("\n");
         
     }
+    
+    /**
+     * Declaracion del metodo toString que permite devolver la informacion con el formato a continuacion 
+     * @return mensaje 
+     */ 
     
     @Override
     public String toString() {
