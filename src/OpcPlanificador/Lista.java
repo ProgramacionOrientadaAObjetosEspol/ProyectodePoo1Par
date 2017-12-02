@@ -2,8 +2,6 @@ package OpcPlanificador;
 
 import static OpcPlanificador.Curso.t;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import proyectodepoo1par.ReadWriter;
 
 public class Lista {

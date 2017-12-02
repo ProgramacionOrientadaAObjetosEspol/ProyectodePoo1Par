@@ -70,7 +70,6 @@ public class ProfesorRegistro {
             }else if(tipo instanceof Normal){
                 crearLista(profesor.getNombre(), profesor.getApellido(), String.valueOf(profesor.getEdad()), profesor.getVarita(), profesor.getFechaRegistro(), "N", "null","null","null", profesor.getNormalDeporte());
             }
-            System.out.println("Sus datos se han guardado correctamente\n");
         }
     }
 
