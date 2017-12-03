@@ -7,7 +7,7 @@ package IntefazPrin;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 public interface Volador {
     
@@ -17,7 +17,7 @@ public interface Volador {
          * Metodo volar: implementado para mostrar si el mago puede volar y con
          * que artefacto lo realiza
          */
-        public void volar();
+        public String volar();
         /**
         * Metodo despegar: implementado para mostrar con que artefacto despega el mago
         */

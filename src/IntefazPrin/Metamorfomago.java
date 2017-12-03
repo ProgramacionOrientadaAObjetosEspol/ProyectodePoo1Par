@@ -1,28 +1,29 @@
 package IntefazPrin;
 
-//Declaracion de la clase
 
-/**
- * Clase Metamorfomago que implementa la interfaz Volador 
- * @author Araujo Steven
- * @author Banchon Melanie
- * @author Guerrero Darly
- * @version 02/12/17
- */
+//Declaracion de la clase
+ 
+ /**
+  * Clase Metamorfomago que implementa la interfaz Volador 
+  * @author Araujo Steven
+  * @author Banchon Melanie
+  * @author Guerrero Darly
+  * @version 03/12/17
+  */
 public class Metamorfomago implements Volador {
     
     //Declaracion de atributos
-    
+     
     /**
      * variable privada: Almancenara el tipo de posion que toma el mago
      */
     private String posión;
 
     //Declaracion de constructores 
-    
+     
     /**
      * Constructor Metamorfomago
-     * @param posión Indica el tipo de posion que toma el mago
+     * @param posión
      */
     public Metamorfomago(String posión) {
         this.posión = posión;
@@ -30,12 +31,12 @@ public class Metamorfomago implements Volador {
 
     /**
      * Constructor Metamorfomago sin parametros 
-    */
+     */
     public Metamorfomago() {
     }
 
-     //Declaracion de metodos 
-    
+    //Declaracion de metodos 
+     
     /**
      * Metodo getPosión: devuelve el tipo de posión que toma el mago
      * @return posión 
@@ -47,7 +48,6 @@ public class Metamorfomago implements Volador {
     /**
      * Metodo setPosión: establece el tipo de posión que toma el mago a la variable 
      * del contructor
-     * @param posión Indica el tipo de posion que toma el mago
      */
     public void setPosión(String posión) {
         this.posión = posión;
@@ -57,8 +57,8 @@ public class Metamorfomago implements Volador {
      * Metodo volar: metodo sobrescrito encargado de imprimir un mensaje
      */
     @Override
-    public void volar() {
-        System.out.println("Vuela solo con su poder, sin varita ni escoba");
+    public String volar() {
+        return("para volar utiliza su poder, sin varita ni escoba");
     }
 
     /**

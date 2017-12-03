@@ -1,28 +1,28 @@
 package IntefazPrin;
 
 //Declaracion de la clase
-
+ 
 /**
  * Clase Normal que implementa la interfaz Volador 
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 public class Normal implements Volador{
     
-     //Declaracion de atributos
-    
+    //Declaracion de atributos
+     
     /**
      * variable privada: Almancenara el tipo de deporte que practica el mago
-     */
++    */
     private String deporte;
 
     //Declaracion de constructores 
-    
+     
     /**
      * Constructor Normal
-     * @param deporte Indica el tipo de deporte que practica el mago
+     * @param deporte
      */
     public Normal(String deporte) {
         this.deporte = deporte;
@@ -30,13 +30,12 @@ public class Normal implements Volador{
 
     /**
      * Constructor Normal sin parametros 
-    */
+     */
     public Normal() {
     }
     
-
     //Declaracion de metodos 
-    
+     
     /**
      * Metodo getDeporte: devuelve el tipo de deporte que practica el mago
      * @return deporte 
@@ -48,7 +47,6 @@ public class Normal implements Volador{
     /**
      * Metodo setDeporte: establece el tipo de deporte que toma el mago a la variable 
      * del contructor
-     * @param deporte Indica el tipo de deporte que practica el mago
      */
     public void setDeporte(String deporte) {
         this.deporte = deporte;
@@ -58,10 +56,10 @@ public class Normal implements Volador{
      * Metodo volar: metodo sobrescrito encargado de imprimir un mensaje
      */
     @Override
-    public void volar() {
-        System.out.println("Vuela solo con ayuda de su escoba de modelo Nimbus 2000");
+    public String volar() {
+        return ("para volar necesita una Nimbus 2000");
     }
-    
+
     /**
      * Metodo despegar: metodo sobrescrito 
      */

@@ -41,7 +41,7 @@ public class RolEstudiantes {
      * @param contraseña Almacena la contraseña del usuario
      */
     public void describir(String usuario, String contraseña) {
-        Vuelo v= null; 
+        Vuelo v= new Vuelo(usuario, contraseña); 
         v.getNomApe();
         v.describir();
     }

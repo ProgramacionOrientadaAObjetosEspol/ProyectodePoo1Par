@@ -1,14 +1,13 @@
 package IntefazPrin;
 
-//Declaracion de la clase
-
 /**
- * Clase Animagos que implementa la interfaz Volador 
- * @author Araujo Steven
- * @author Banchon Melanie
- * @author Guerrero Darly
- * @version 02/12/17
- */
+  * Clase Animagos que implementa la interfaz Volador 
+  * @author Araujo Steven
+  * @author Banchon Melanie
+  * @author Guerrero Darly
+  * @version 03/12/17
+  */
+
 public class Animagos implements Volador{
     
     //Declaracion de atributos
@@ -18,20 +17,19 @@ public class Animagos implements Volador{
      */
     private String animal;
     
-    
     /**
      * variable privada: Almancenara el tipo de animal
      */
     private String hechizo;
 
-    
     //Declaracion de constructores 
-    
+     
     /**
      * Constructor Animagos
-     * @param animal Indica el tipo de animal en el que puede convertirse el mago
-     * @param hechizo Indica el tipo de hechizo que puede hacer el mago
+     * @param animal
+     * @param hechizo
      */
+    
     public Animagos(String animal, String hechizo) {
         this.animal = animal;
         this.hechizo = hechizo;
@@ -39,12 +37,13 @@ public class Animagos implements Volador{
 
     /**
      * Constructor Animagos sin parametros 
-    */
+     */
+    
     public Animagos() {
     }
 
     //Declaracion de metodos 
-    
+     
     /**
      * Metodo getAnimal: devuelve el tipo de animal del mago
      * @return animal 
@@ -56,15 +55,14 @@ public class Animagos implements Volador{
     /**
      * Metodo setAnimal: establece el tipo de animal del mago a la variable 
      * del contructor
-     * @param animal Indica el tipo de animal en que puede convertise el mago
      */
     public void setAnimal(String animal) {
         this.animal = animal;
     }
-
+    
     /**
      * Metodo getHechizo: devuelve el tipo de hechizo del mago
-     * @return hechizo
+     * @return hechizo 
      */
     public String getHechizo() {
         return hechizo;
@@ -73,7 +71,6 @@ public class Animagos implements Volador{
     /**
      * Metodo setHechizo: establece el tipo de hechizo del mago a la variable 
      * del contructor
-     * @param hechizo Indica el tipo de hechizo que puede hacer el mago
      */
     public void setHechizo(String hechizo) {
         this.hechizo = hechizo;
@@ -83,8 +80,8 @@ public class Animagos implements Volador{
      * Metodo volar: metodo sobrescrito encargado de imprimir un mensaje
      */
     @Override
-    public void volar() {
-        System.out.println("Vuela con ayuda de la varita");
+    public String volar() {
+        return("para volar necesita una varita");
     }
 
     /**
