@@ -7,13 +7,60 @@ import java.util.Scanner;
 import proyectodepoo1par.Profesor;
 import proyectodepoo1par.ReadWriter;
 
+//Declaracion de la clase
 
+/**
+ * Clase ProfesorRegistro
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 public class ProfesorRegistro {
+    
+    //Declaracion de atributos
+    
+    /**
+     * variable default: Almancenara la entrada 
+     */
     Scanner datos = new Scanner(System.in);
+    
+    /**
+     * variable default: Almancenara la informacion si el usuario desea continuar
+     * con el registro
+     */
     String op_crear ="";
+    
+    /**
+     * objeto Profedor: Inicializacion del objeto de tipo profesor como vacio 
+     * para su posterior implementacion
+     */
     Profesor profesor = null;
+    
+    /**
+     * objeto tipo: Inicializacion del objeto de tipo object como vacio 
+     * para su posterior implementacion
+     */
     Object tipo = null;
     
+    
+    //Declaracion de metodos
+    
+    /**
+     * Metodo crearLista: Permite crear el profesor con los datos proporcionados por el usuario
+     * gracias a la entrada, ademas almacena la informacion en el arraylist llamado listaDatos, 
+     * el cual luego es guardo en el archivo "profesores.txt"
+     * @param nombre
+     * @param apellido
+     * @param edad
+     * @param varita
+     * @param fechaIngreso
+     * @param tipo
+     * @param animal
+     * @param hechizo
+     * @param pocion
+     * @param deporte
+     */
     //Guardamos al profesor
     public void crearLista(String nombre,String apellido,String edad, String varita,String fechaIngreso, String tipo,String animal,String hechizo, String pocion, String deporte){
         ReadWriter archivo = new ReadWriter();
@@ -33,6 +80,12 @@ public class ProfesorRegistro {
         archivo.AgregarAlArchivo(listaDatos, "profesores.txt");
     }   
     
+    
+    /**
+     * Metodo pedirDatos: Permite almacenar los datos proporcionados por el usuario
+     * en las variables proporcionadas, ademas instancia el objeto de tipo profesor
+     * y envia los datos al contructor 
+     */
     //Pedir los datos
     public void pedirDatos(){
         System.out.println("CREAR PROFESOR");
@@ -51,6 +104,11 @@ public class ProfesorRegistro {
         profesor = new Profesor(fechaRegistro,edad, "null", varita, nombre, apellido);
     }
     
+    
+     /**
+     * Metodo crear: Define el objeto tipo para pedir los datos al objeto profesor de
+     * acuerdo al tipo de mago del usuario
+     */
     //Principal
     public void crear(){
         pedirDatos();
@@ -73,6 +131,13 @@ public class ProfesorRegistro {
         }
     }
 
+    
+    /**
+     * Metodo toString: muestra el mensaje de acuerdo al valor del contador op
+     * @return "Sus datos se han guardado correctamente" si el usuario ingreso "S"
+     * o "No se han gurdado sus datos" ssi el usuario ingreso "N"
+     */
+    
     @Override
     public String toString() {
         if(op_crear.equals("S")){

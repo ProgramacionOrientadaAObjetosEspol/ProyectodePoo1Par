@@ -6,17 +6,61 @@ import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
 
+//Declaracion de la clase
+
+/**
+ * Clase Curso
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 public class Curso {
 
-    //atributos
+    //Declaracion de atributos
+    
+    /**
+     * variable default estatica: Almancenara la entrada 
+     */
     static Scanner t = new Scanner(System.in);
+    
+    /**
+     * variable default: Almancenara el valor de la opcion ingresada por el 
+     * usuario planificador
+     */
     int op = 0;
+    
+    /**
+     * variable datos: Almacenara los datos del usuario en el metodo crear en un 
+     * ArrayList
+     */
     ArrayList<String> datos = new ArrayList<>();
-    static int op_materias, n = 1;;
-    static Object[] arr = Materias.values();                //Materias en array
+    
+    /**
+     * variable estatica op_materias: Almacenara la opcion de materia ingresa por 
+     * el usuario
+     */
+    static int op_materias;
+    
+    /**
+     * variable estatica n: Sera usada como contador 
+     */
+    static int n = 1;;
+    
+    /**
+     * variable estatica arr: Almacena en un array de objetos las materias
+     * de la clase enum Materias
+     */
+    static Object[] arr = Materias.values();                
 
     
-    //metodos
+    //Declaracion de metodos
+    
+    /**
+     * Metodo crear: Permite crear el curso con los datos proporcionados por el usuario
+     * gracias a la entrada, ademas almacena la informacion en el arraylist llamado datos, 
+     * el cual luego es guardo en el archivo "curso.txt"
+     */
     public void crear() {
         //lineas de profesores
         ArrayList<ArrayList<String>> lineas = new ArrayList<>();
@@ -102,7 +146,11 @@ public class Curso {
         }else{ System.out.println("La materia ya tiene un curso");}
     }
     
-
+    /**
+     * Metodo toString: muestra el mensaje de acuerdo al valor del contador op
+     * @return "Se ha registrado en la materia" si el valor del contador op es igual a cero
+     * o "No se ha registrado en la materia" si el valor del contador op es diferente de cero
+     */
     @Override
     public String toString() {
         if (op == 0) {
@@ -112,6 +160,10 @@ public class Curso {
         }
     }
 
+    /**
+     * Metodo elegirMateria: muestra las materias del arreglo y le permite al 
+     * usuario escoger una 
+     */
     public static void eligirMateria(){
         //Materias
         n =1;

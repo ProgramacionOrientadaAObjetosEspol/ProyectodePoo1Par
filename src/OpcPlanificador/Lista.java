@@ -4,14 +4,58 @@ import static OpcPlanificador.Curso.t;
 import java.util.ArrayList;
 import proyectodepoo1par.ReadWriter;
 
+//Declaracion de la clase
+
+/**
+ * Clase Lista
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 public class Lista {
 
+    
+    //Declaracion de atributos
+    
+    /**
+     * variable lineasRegistro: Almacenara las lineas del archivo "registro.txt"
+     */
     ArrayList<ArrayList<String>> lineasRegistro = new ArrayList<>();
+    
+    /**
+     * variable lineasEstudiante: Almacenara las lineas del archivo "estudiantes.txt"
+     */
     ArrayList<ArrayList<String>> lineasEstudiante = new ArrayList<>();
+    
+    /**
+     * variable Arraygeneral: Almacenara los datos del usuario y permitira acceder 
+     * la informacion de forma rapida 
+     */
     ArrayList<ArrayList<String>> Arraygeneral = new ArrayList<>();
 
-    int contadorM = 0, opc;
+    
+    /**
+     * variable contadorM: Sera usada como contador del registro
+     */
+    int contadorM = 0;
+    
+    /**
+     * variable opc: Sera usada para almacenar el valor de la opcion de como el 
+     * usuario planificador desea ordenar a los estudiantes en el registro ya sea por:
+     * edad, nombre o materias registradas
+     */
+    int opc;
 
+    
+    //Declaracion de metodos
+    
+    /**
+     * Metodo listar: permite ordenar a los estudiantes registrados de acuerdo a
+     * el criterio que elija el usuario planificador ya sea por: edad, nombre o 
+     * materias registradas
+     * objecto archivo de la clase ReadWriter 
+     */
     public void listar() {
 
         ReadWriter archivo = new ReadWriter();

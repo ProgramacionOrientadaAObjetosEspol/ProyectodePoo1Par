@@ -5,14 +5,61 @@ import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
 
+
+//Declaracion de la clase
+
+/**
+ * Clase Horario
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 public class Horario {
 
+    //Declaracion de atributos
+    
+    /**
+     * variable default: Almancenara la entrada 
+     */
     Scanner t = new Scanner(System.in);
+    
+    /**
+     * variable privada lineasCurso: Almacenara las lineas del archivo "curso.txt"
+     */
     private ArrayList<ArrayList<String>> lineasCurso = new ArrayList<>();
+    
+    /**
+     * variable privada lineasRegistro: Almacenara las lineas del archivo "registro.txt"
+     */
     private ArrayList<ArrayList<String>> lineasRegistro = new ArrayList<>();
-    private int op_materias,contador=0;
+    
+    /**
+     * variable privada op_materias: Almacenara la opcion de materia ingresa por 
+     * el usuario
+     */
+    private int op_materias;
+    
+    /**
+     * variable privada contador: Sera usada como contador en el metodo planificador
+     */
+    private int contador=0;
+    
+    /**
+     * variable private arr: Almacena en un array de objetos las materias
+     * de la clase enum Materias
+     */
     private Object[] arr = Materias.values();        //Materias en array
     
+    
+    //Declaracion de metodos
+    
+    /**
+     * Metodo planificador: permite leer el archivo curso.txt
+     * y de acuerdo la opcion de materia que ingresa el usuario obtener la 
+     * materia del arreglo lineasCurso 
+     * objecto archivo de la clase ReadWriter 
+     */
     public void planificador() {
 
         ReadWriter archivo = new ReadWriter();
@@ -40,6 +87,11 @@ public class Horario {
         }
     }
 
+    /**
+     * Metodo toString: muestra el mensaje de acuerdo al valor del contador op
+     * @return "Sus datos se han guardado correctamente" si el usuario ingreso "S"
+     * o "No se han gurdado sus datos" ssi el usuario ingreso "N"
+     */
     @Override
     public String toString() {
         for (ArrayList<String> linea : lineasCurso) {

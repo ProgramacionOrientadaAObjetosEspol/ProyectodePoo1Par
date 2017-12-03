@@ -37,8 +37,10 @@ public class Planificacion {
      */
     Object[] arr = Materias.values();    
         
+    //Declaracion de metodos 
+    
     /**
-     * Declaracion del metodo planificar, permite leer el archivo curso.txt
+     * Metodo planificar: permite leer el archivo curso.txt
      * y de acuerdo la opcion de materia que ingresa el usuario obtener la 
      * materia del arreglo lineasCurso 
      * objecto archivo de la clase ReadWriter 
@@ -64,8 +66,9 @@ public class Planificacion {
     }
     
     /**
-     * Declaracion del metodo toString que permite devolver la informacion con el formato a continuacion 
-     * @return mensaje 
+     * Metodo toString: permite devolver la informacion con el formato a continuacion 
+     * @return "Materias", "Profesor","Horario" si la materia posee un curso asignado 
+     * o el mensaje "Esta materia no posee curso asignado." si ocurre lo contrario
      */ 
     
     @Override
