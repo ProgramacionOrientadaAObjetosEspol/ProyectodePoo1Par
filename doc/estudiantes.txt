@@ -2,7 +2,8 @@ Hermione,Granger,16,vid,Griffindor,N
 Harry,Potter,16,acebo,Griffindor,N
 Draco,Malfoy,16,espino,Slytherin,N
 Colin,Creevey,12,cedro,Ravenclaw,A
-Darly,Guerrero,21,Cedro,sabf,M
+Darly,Guerrero,19,Cedro,sabf,M
 Steven,Araujo,19,NB,Dflor,A
 B,b,15,asd,aca,M
 Harry,Araujo,16,var,Slytherin,A
+Harry,Castro,19,cart,Portete,M
