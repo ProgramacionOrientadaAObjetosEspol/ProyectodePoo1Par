@@ -3,3 +3,4 @@ fecha,nombres,apellidos,materia,tipo
 21/11/2017,Harry,Potter,Adivinacion,E
 20/11/2017,Hermione,Granger,Herbologia,E
 20/11/2017,Hermione,Granger,Adivinacion,E
+02/12/2017,Harry,Araujo,Pociones,N

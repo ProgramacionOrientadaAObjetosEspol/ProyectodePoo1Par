@@ -22,7 +22,7 @@ public class RolPlanificador {
     public void crearCurso() {
         Curso ob = new Curso();
         ob.crear();
-        System.out.println(ob.toString()+"\n");
+        System.out.println(ob.toString());
     }
 
     
@@ -61,7 +61,7 @@ public class RolPlanificador {
     public void verHorarios() {
         Horario ob = new Horario();
         ob.planificador();
-        System.out.println(ob.toString()+"\n");
+        System.out.println(ob.toString());
     }
 
     /**
@@ -72,6 +72,6 @@ public class RolPlanificador {
     public void listadorEstudiante() {
         Lista ob1 = new Lista();
         ob1.listar();
-        //System.out.println(ob1.toString());
+        System.out.println(ob1.toString());
     }
 }

@@ -5,3 +5,4 @@ Colin,Creevey,12,cedro,Ravenclaw,A
 Darly,Guerrero,21,Cedro,sabf,M
 Steven,Araujo,19,NB,Dflor,A
 B,b,15,asd,aca,M
+Harry,Araujo,16,var,Slytherin,A
