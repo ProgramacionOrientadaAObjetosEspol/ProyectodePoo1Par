@@ -7,3 +7,4 @@ Steven,Araujo,19,NB,Dflor,A
 B,b,15,asd,aca,M
 Harry,Araujo,16,var,Slytherin,A
 Harry,Castro,19,cart,Portete,M
+Mayerli,Briones,16,lom,Florida,N

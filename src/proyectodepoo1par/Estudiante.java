@@ -97,26 +97,15 @@ public class Estudiante extends Miembros {
             System.out.println("");
             switch (validacion) {
                 case 1:
-                    System.out.print("En que clase de animal puede convertirse?: ");
-                    String animal = datos.nextLine();
-
-                    System.out.print("Ingrese su hechizo: ");
-                    String hechizo = datos.nextLine();
-                    animago = new Animagos(animal, hechizo);
+                    animago = new Animagos();
                     return animago;
                     
                 case 2:
-                    System.out.print("Ingrese su pocion: ");
-                    String pocion = datos.nextLine();
-
-                    metamorfomago = new Metamorfomago(pocion);
+                    metamorfomago = new Metamorfomago();
                     return metamorfomago;
                     
                 case 3:
-                    System.out.print("Que clase de deporte practica: ");
-                    String deporte = datos.nextLine();
-
-                    normal = new Normal(deporte);
+                    normal = new Normal();
                     return normal;
                     
                 default: 
