@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.ReadWriter;
+import proyectodepoo1par.Principal;
 
 //Declaracion de la clase
 /**
@@ -59,7 +60,7 @@ public class Registro {
     /**
      * variable default estatica: Almacenara la opcion de materia que ingrese el usuario 
      */
-    static int op_materias=0;
+    static int op_materias;
     
      /**
      * variable default estatica: Contador para saber si el usuario cuenta con la edad 
@@ -107,6 +108,7 @@ public class Registro {
     
     //Declaracion del metodos
     
+    //Principal
     /**
      * 
      * Metodo registrar: se encarga de leer la opcion de materia
@@ -121,7 +123,7 @@ public class Registro {
         lineas = archivo.leerArchivo("cursos.txt");
         
         //Elegir la opcion de las materias
-        eligirMateria();
+        op_materias = new Principal().eligirMateria();
         
         for(ArrayList<String> linea: lineas){
             if(linea.get(0).equals(arr[op_materias-1].toString())){
@@ -154,24 +156,6 @@ public class Registro {
         }
     }
     
-    /**
-     * Metodo elegirMateria: muestra las materias del arreglo 
-     * y le permite al usuario escoger una 
-     */
-    public static void eligirMateria(){
-        //Materias
-        System.out.println("\n/** MATERIAS **/ \n");
-        int n = 1;
-        for (Object i : arr) {
-            System.out.println(n + ". " + i);
-            n++;
-        }
-        System.out.print("Elija una materia del listado de materias: ");
-        op_materias = t.nextInt();
-        t.nextLine();
-        System.out.println("\n");
-    }
-
     /**
      * Metodo toString: muestra el mensaje de acuerdo a la opcion
      * escogida por el usuario para continuar con el registro

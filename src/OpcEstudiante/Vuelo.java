@@ -51,7 +51,16 @@ public class Vuelo {
      * variable privada lineasUsuario: Almacenara las lineas del archivo "usuario.txt"
      */
     private ArrayList<ArrayList<String>> lineasUsuario = new ArrayList<>();
-    String tipoMago, volar;
+    
+    /**
+     * variable tipoMago: Almacenara el tipo de mago del estudiante
+     */
+    String tipoMago;
+    
+    /**
+     * variable volar: Almacenara la breve descripcion del tipo de mago
+     */
+    String volar;
     
     ReadWriter archivo = new ReadWriter();
     

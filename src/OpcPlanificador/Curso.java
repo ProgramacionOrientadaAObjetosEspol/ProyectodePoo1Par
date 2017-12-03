@@ -14,7 +14,7 @@ import proyectodepoo1par.ReadWriter;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 public class Curso {
 
@@ -42,12 +42,7 @@ public class Curso {
      * el usuario
      */
     static int op_materias;
-    
-    /**
-     * variable estatica n: Sera usada como contador 
-     */
-    static int n = 1;;
-    
+        
     /**
      * variable estatica arr: Almacena en un array de objetos las materias
      * de la clase enum Materias
@@ -58,13 +53,13 @@ public class Curso {
      * variable default: Almancenara el valor de la opcion ingresada para elegir 
      * el profesor del listado
      */
-    int op_profesor;
+    int op_profesor = 0;
     
     /**
      * variable default: Almancenara el valor de la opcion ingresada para seleccionar
      * la capacidad del cuso
      */
-    int op_capacidad;
+    int op_capacidad = 0;
     
     /**
      * variable default: Almancenara el valor de la opcion ingresada para el dia
@@ -124,7 +119,7 @@ public class Curso {
         lineas1 = archivo.leerArchivo("cursos.txt");
 
         //Elegir las materias
-        eligirMateria();
+        op_materias = new Principal().eligirMateria();
         op = 0;
         
         //Verifica si esa materia ya tiene curso
@@ -164,39 +159,19 @@ public class Curso {
     }
     
      /**
-     * Metodo toString: muestra el mensaje de acuerdo al valor del contador op
-     * @return "Se ha registrado en la materia" si el valor del contador op es igual a cero
-     * o "No se ha registrado en la materia" si el valor del contador op es diferente de cero
+     * Metodo toString: muestra el mensaje "Se ha creado el curso" en caso de que ingrese "S"
+     * @return Materia, Profesor, Capacidad y Horario
+     * caso contrario presenta "No se ha creado el curso"
      */
     @Override
     public String toString() {
         if (op == 0) {
             return("Se ha creado el curso:\nMateria: " + datos.get(0) + "\nProfesor: " + datos.get(1) + "\nCapacidad: " + datos.get(4)+ "\nHorario: " + datos.get(3));
         } else {
-            return("No se ha creado el cursos\n");
+            return("No se ha creado el curso\n");
         }
     }
 
-    
-    /**
-     * Metodo elegirMateria: muestra las materias del arreglo y le permite al 
-     * usuario escoger una, ademas valida que la opcion ingresada sea la correcta
-     */
-    public void eligirMateria(){
-        //Materias
-        n =1;
-        System.out.println("\n/** MATERIAS **/ \n");
-        for (Object i : arr) {
-            System.out.println(n + ". " + i);
-            n++;
-        }
-        System.out.print("Elija una materia del listado de materias: ");
-        while(op_materias == 0){
-            String n1 = t.nextLine();
-            op_materias = Integer.parseInt(new Principal().validarNumero(n1));
-            if(op_materias == 0){System.out.print("Intente de nuevo!\n\nElija una materia del listado de materias: ");}
-        }
-    }
     
     /**
      * Metodo eligirProfesor: muestra los profesores del arreglo y le permite al 
@@ -205,7 +180,7 @@ public class Curso {
     public void eligirProfesor(){
         //Profesores
             System.out.println("/** Profesores **/ \n");
-            n = 0;
+            int n = 0;
             for (ArrayList<String> linea : lineas) {
                 if (n != 0) {
                     System.out.println(n + ". " + linea.get(0) + " " + linea.get(1));

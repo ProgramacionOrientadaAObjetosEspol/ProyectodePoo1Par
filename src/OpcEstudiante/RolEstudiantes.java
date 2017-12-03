@@ -31,7 +31,7 @@ public class RolEstudiantes {
     public void registrar(String usuario, String contraseña) {
         Registro r = new Registro(usuario, contraseña);
         r.registrar();
-        System.out.println(r.toString());
+        System.out.println(r.toString()+"\n");
     }
 
     /**
@@ -42,8 +42,8 @@ public class RolEstudiantes {
      */
     public void describir(String usuario, String contraseña) {
         Vuelo v= new Vuelo(usuario, contraseña); 
-        v.getNomApe();
         v.describir();
+        System.out.println(v.toString()+"\n");
     }
 
 }

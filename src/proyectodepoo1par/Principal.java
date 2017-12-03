@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 public class Principal {
    //Declaracion de atributos
@@ -227,7 +227,7 @@ public class Principal {
                     estudiante.registrar(usuario, contraseña);
                     break;
                 case 3:
-                    ;
+                    estudiante.describir(usuario, contraseña);;
                     break;
                 case 4:
                     System.out.println("Sesion cerrada.\nGracias por usar el programa.\n----------------------------------------------------------------------------");
@@ -255,5 +255,27 @@ public class Principal {
             }
             System.out.println("No ingresó un número!");
             return "0";
+    }
+    
+    /**
+     * Metodo elegirMateria: muestra las materias del arreglo y le permite al 
+     * usuario escoger una, ademas valida que la opcion ingresada sea la correcta
+     * @return op_materias 
+     */
+    public int eligirMateria(){
+        Object[] arr = Materias.values();   //Array con las materias provenientes de enum Materias        
+        int op_materias = 0, n = 1;
+        System.out.println("\n/** MATERIAS **/ \n");
+        for (Object i : arr) {
+            System.out.println(n + ". " + i);
+            n++;
+        }
+        System.out.print("Elija una materia del listado de materias: ");
+        while(op_materias == 0){
+            String n1 = t.nextLine();
+            op_materias = Integer.parseInt(new Principal().validarNumero(n1));
+            if(op_materias == 0){System.out.print("Intente de nuevo!\n\nElija una materia del listado de materias: ");}
+        }
+        return op_materias;
     }
 }

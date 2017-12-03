@@ -4,6 +4,7 @@ package OpcEstudiante;
 import java.util.ArrayList;
 import java.util.Scanner;
 import proyectodepoo1par.Materias;
+import proyectodepoo1par.Principal;
 import proyectodepoo1par.ReadWriter;
 
 //Declaracion de la clase
@@ -50,19 +51,8 @@ public class Planificacion {
         
         ReadWriter archivo = new ReadWriter();
         lineasCurso = archivo.leerArchivo("cursos.txt");
-       
-        
-        System.out.println("\n/** CURSOS PLANIFICADOS **/ \n");
-        int n = 1;
-        for (Object i : arr) {
-            System.out.println(n + ". " + i);
-            n++;
-        }
-        System.out.print("Elija una materia del listado de materias: ");
-        op_materias = t.nextInt();
-        t.nextLine();
+        op_materias = new Principal().eligirMateria();
         System.out.println("\n");
-        
     }
     
     /**
@@ -70,7 +60,6 @@ public class Planificacion {
      * @return "Materias", "Profesor","Horario" si la materia posee un curso asignado 
      * o el mensaje "Esta materia no posee curso asignado." si ocurre lo contrario
      */ 
-    
     @Override
     public String toString() {
         for (ArrayList<String> linea : lineasCurso) {
