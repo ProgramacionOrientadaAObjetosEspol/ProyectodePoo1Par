@@ -5,5 +5,3 @@ fecha,nombres,apellidos,materia,tipo
 20/11/2017,Hermione,Granger,Adivinacion,N
 02/12/2017,Harry,Araujo,Defensa contra las artes oscuras,N
 02/12/17,Harry,Castro,Defensa contra las artes oscuras,N
-3/12/2017,B,b,Pociones,E
-3/12/2017,B,b,Herbologia,N

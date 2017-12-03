@@ -144,7 +144,8 @@ public class Principal {
                             validacion = linea.get(4);
                             break;          //Cierro el ciclo for
                         }
-                    }   break OUTER;        //Cierro el while
+                    }   
+                    break OUTER;        //Cierro el while
                 case 2:                     //Salir
                     validacion_ingreso=2;
                     break OUTER;

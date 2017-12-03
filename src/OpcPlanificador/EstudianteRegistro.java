@@ -16,7 +16,7 @@ import proyectodepoo1par.ReadWriter;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 public class EstudianteRegistro {
     

@@ -7,9 +7,9 @@ package proyectodepoo1par;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
-public class Miembros extends Rol {
+public abstract class Miembros extends Rol {
 
     //Declaracion de atributos
     
@@ -115,15 +115,5 @@ public class Miembros extends Rol {
         return varita;
     }
 
-    /**
-     * Metodo TipoMago: devuelve el tipo de mago 
-     * @return tipo de mago
-     *         o null en caso de que no se asigne ningun valor 
-     */
-    @Override
-    public Object TipoMago() {
-        //Animagos, Metamorfomago y Normal
-        return null;
-    }
 
 }

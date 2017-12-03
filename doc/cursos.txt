@@ -3,3 +3,5 @@ Defensa contra las artes oscuras,Severus Snape,martes,09:30-11:30,2
 Pociones,Nimphadora Tonks,miercoles,13:30-15:30,10
 Adivinacion,Albus Dumbledore,miercoles,13:30-15:30,10
 Herbologia,Albus Dumbledore,Lunes,7:30-9:30,15
+Astronomia,Nimphadora Tonks,Viernes,10:30-12:30,15
+Historia de la magia,Severus Snape,Miercoles,1:00-3:00,12

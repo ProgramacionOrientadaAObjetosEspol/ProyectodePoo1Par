@@ -13,7 +13,7 @@ import proyectodepoo1par.ReadWriter;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 
 public class Lista {
@@ -49,7 +49,7 @@ public class Lista {
             while(opc == 0){
                 String n1 = t.nextLine();
                 opc = Integer.parseInt(new Principal().validarNumero(n1));
-                if(opc == 0){System.out.print("Intente de nuevo!\n\nElija un profesor del listado de profesores: ");}
+                if(opc == 0){System.out.print("Intente de nuevo!\n\nElija el criterio para ordenar: ");}
             }
             //Opcion 1 - Ordena por edad
             if (opc == 1) {

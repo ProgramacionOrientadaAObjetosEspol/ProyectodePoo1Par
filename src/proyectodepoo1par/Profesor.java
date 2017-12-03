@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author Araujo Steven
  * @author Banchon Melanie
  * @author Guerrero Darly
- * @version 02/12/17
+ * @version 03/12/17
  */
 public class Profesor extends Miembros {
     
@@ -113,39 +113,46 @@ public class Profesor extends Miembros {
      */
     @Override
     public Object TipoMago() {
-        System.out.println("Tipos de Magos/Brujas");
-        System.out.println("1. Animago \n2. Metamorfomago \n3. Normal ");
-        System.out.print("Elija el tipo de mago/bruja que es: ");
-        int opc = datos.nextInt();
-        datos.nextLine();
+        OUTER:
         while (true) {
+            int validacion = 0;
+            System.out.println("Tipos de Magos/Brujas");
+            System.out.println("1. Animago \n2. Metamorfomago \n3. Normal ");
+            System.out.print("Elija el tipo de mago/bruja que es: ");
+            
+            while(validacion == 0){
+                String n1 = datos.nextLine();
+                validacion = Integer.parseInt(new Principal().validarNumero(n1));
+                if(validacion == 0){System.out.print("Intente de nuevo!\n\nElija el tipo de mago/bruja que es: ");}
+            }
+            System.out.println("");
+            switch (validacion) {
+                case 1:
+                    System.out.print("En que clase de animal puede convertirse?: ");
+                    String animal = datos.nextLine();
 
-            if (opc == 1) {
-                System.out.print("En que clase de animal puede convertirse?: ");
-                String animal = datos.nextLine();
-                               
-                System.out.print("Ingrese su hechizo: ");
-                String hechizo = datos.nextLine();
-                animago = new Animagos(animal, hechizo);
-                return animago;
-            }
-            else if (opc == 2) {
-                System.out.print("Ingrese su pocion: ");
-                String pocion = datos.nextLine();
-                
-                metamorfomago = new Metamorfomago(pocion);
-                return metamorfomago;
-            }
-            else if (opc == 3) {
-                System.out.print("Que clase de deporte practica: ");
-                String deporte = datos.nextLine();
-                
-                normal = new Normal(deporte);
-                return normal;
-            }
-            else{
-                System.out.println("Opcion incorrecta! ");
-                return null;
+                    System.out.print("Ingrese su hechizo: ");
+                    String hechizo = datos.nextLine();
+                    animago = new Animagos(animal, hechizo);
+                    return animago;
+                    
+                case 2:
+                    System.out.print("Ingrese su pocion: ");
+                    String pocion = datos.nextLine();
+
+                    metamorfomago = new Metamorfomago(pocion);
+                    return metamorfomago;
+                    
+                case 3:
+                    System.out.print("Que clase de deporte practica: ");
+                    String deporte = datos.nextLine();
+
+                    normal = new Normal(deporte);
+                    return normal;
+                    
+                default: 
+                     System.out.println("Intente de nuevo.\n");
+                    break; //Intentar de nuevo
             }
         }
     }

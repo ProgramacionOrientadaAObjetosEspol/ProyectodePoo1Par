@@ -9,7 +9,13 @@ package proyectodepoo1par;
  * @author Guerrero Darly
  * @version 02/12/17
  */
-public class Rol {
+public abstract class Rol {
+    /**
+     * Metodo TipoMago: devuelve el tipo de mago 
+     * @return tipo de mago
+     *         o null en caso de que no se asigne ningun valor 
+     */
+    public abstract Object TipoMago();
     
     //Declaracion de atributos
     
@@ -164,15 +170,5 @@ public class Rol {
      */
     public void setRol(String rol) {
         this.rol = rol;
-    }
-    
-    /**
-     * Metodo TipoMago: devuelve el tipo de mago 
-     * @return tipo de mago
-     *         o null en caso de que no se asigne ningun valor 
-     */
-    public Object TipoMago(){
-        //Animagos, Metamorfomago y Normal
-        return null;
     }
 }
