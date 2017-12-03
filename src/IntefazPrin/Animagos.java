@@ -29,8 +29,8 @@ public class Animagos implements Volador{
     
     /**
      * Constructor Animagos
-     * @param animal
-     * @param hechizo
+     * @param animal Indica el tipo de animal en el que puede convertirse el mago
+     * @param hechizo Indica el tipo de hechizo que puede hacer el mago
      */
     public Animagos(String animal, String hechizo) {
         this.animal = animal;
@@ -56,6 +56,7 @@ public class Animagos implements Volador{
     /**
      * Metodo setAnimal: establece el tipo de animal del mago a la variable 
      * del contructor
+     * @param animal Indica el tipo de animal en que puede convertise el mago
      */
     public void setAnimal(String animal) {
         this.animal = animal;
@@ -63,7 +64,7 @@ public class Animagos implements Volador{
 
     /**
      * Metodo getHechizo: devuelve el tipo de hechizo del mago
-     * @return hechizo 
+     * @return hechizo
      */
     public String getHechizo() {
         return hechizo;
@@ -72,6 +73,7 @@ public class Animagos implements Volador{
     /**
      * Metodo setHechizo: establece el tipo de hechizo del mago a la variable 
      * del contructor
+     * @param hechizo Indica el tipo de hechizo que puede hacer el mago
      */
     public void setHechizo(String hechizo) {
         this.hechizo = hechizo;

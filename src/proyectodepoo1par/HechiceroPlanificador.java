@@ -17,11 +17,11 @@ public class HechiceroPlanificador extends Rol {
     
     /**
      * Constructor HechiceroPlanificador
-     * @param usuario
-     * @param contraseña
-     * @param nombre
-     * @param apellido
-     * @param rol
+     * @param usuario almacena el  usuario
+     * @param contraseña almacena la contraseña del usuario
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param rol almacena el rol del usuario
     
      */
     public HechiceroPlanificador(String usuario, String contraseña, String nombre, String apellido, String rol) {

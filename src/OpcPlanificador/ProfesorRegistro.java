@@ -50,16 +50,16 @@ public class ProfesorRegistro {
      * Metodo crearLista: Permite crear el profesor con los datos proporcionados por el usuario
      * gracias a la entrada, ademas almacena la informacion en el arraylist llamado listaDatos, 
      * el cual luego es guardo en el archivo "profesores.txt"
-     * @param nombre
-     * @param apellido
-     * @param edad
-     * @param varita
-     * @param fechaIngreso
-     * @param tipo
-     * @param animal
-     * @param hechizo
-     * @param pocion
-     * @param deporte
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param edad almacena la edad del usuario
+     * @param varita almacena el tipo de varita que usa el usuario
+     * @param fechaIngreso almacena la fecha de ingreso para la creacion de cursos
+     * @param tipo almacena el tipo de mago que es el usuario
+     * @param animal almacena que tipo de animal es el usuario
+     * @param hechizo almacena el tipo de hechizo que realiza el mago
+     * @param pocion almacena el tipo de pocion que toma el mago
+     * @param deporte almacena el tipo de deporte que practica el mago
      */
     //Guardamos al profesor
     public void crearLista(String nombre,String apellido,String edad, String varita,String fechaIngreso, String tipo,String animal,String hechizo, String pocion, String deporte){

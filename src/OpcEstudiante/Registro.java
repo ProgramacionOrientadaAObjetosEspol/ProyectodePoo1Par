@@ -97,8 +97,8 @@ public class Registro {
     
     /**
      *Constructor de la clase 
-     * @param usuario 
-     * @param contraseña
+     * @param usuario Almancenara el usuario 
+     * @param contraseña Almancenara la contraseña del usuario
      */
     public Registro(String usuario, String contraseña) {
         this.usuario = usuario;

@@ -26,8 +26,8 @@ public class ReadWriter {
      * de la direccion, ademas se utliza el metodo try/catch para evitar algun
      * error debido al uso de archivos, en caso de que lo haya lo mostrara en un 
      * mensaje con el tipo de error
-     * @param nombre 
-     * @exception IOException
+     * @param nombre almacena el nombre del usuario
+     * @return lista de lineas del archivo leido
      */
   
     public ArrayList<ArrayList<String>> leerArchivo(String nombre){
@@ -65,9 +65,8 @@ public class ReadWriter {
      * de la direccion, ademas se utliza el metodo try/catch para evitar algun
      * error debido al uso de archivos, en caso de que lo haya lo mostrara en un 
      * mensaje con el tipo de error
-     * @param nombre 
-     * @param lineas 
-     * @exception IOException
+     * @param nombre almacena el nombre del usuario
+     * @param lineas almancena las lineas del archivo leido
      */
     public void sobreEscribirArchivo(ArrayList<ArrayList<String>> lineas, String nombre){
 	File f = new File("");
@@ -102,9 +101,8 @@ public class ReadWriter {
      * de la direccion, ademas se utliza el metodo try/catch para evitar algun
      * error debido al uso de archivos, en caso de que lo haya lo mostrara en un 
      * mensaje con el tipo de error
-     * @param nombre 
-     * @param linea 
-     * @exception IOException
+     * @param nombre almacena el nombre del usuario
+     * @param linea almancena las lineas del archivo leido
      */
     public void AgregarAlArchivo(ArrayList<String> linea, String nombre){
         File f = new File("");

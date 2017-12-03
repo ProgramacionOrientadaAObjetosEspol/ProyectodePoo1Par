@@ -46,11 +46,11 @@ public class Rol {
     
     /**
      * Constructor Rol
-     * @param usuario
-     * @param contraseña
-     * @param nombre
-     * @param apellido
-     * @param rol
+     * @param usuario almacena el  usuario
+     * @param contraseña almacena la contraseña del usuario
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param rol almacena el rol del usuario
      */
     public Rol(String usuario, String contraseña, String nombre, String apellido, String rol) {
         this.usuario = usuario;
@@ -62,8 +62,8 @@ public class Rol {
 
     /**
      * Constructor Rol
-     * @param nombre
-     * @param apellido
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
      */
     public Rol(String nombre, String apellido) {
         this.nombre = nombre;
@@ -72,7 +72,7 @@ public class Rol {
     
     /**
      * Constructor Rol
-     * @param usuario
+     * @param usuario almacena el  usuario
      */
     public Rol(String usuario) {
         this.usuario = usuario;
@@ -92,6 +92,7 @@ public class Rol {
 
      /**
      * Metodo setUsuario: establece el usuario a la variable del contructor
+     * @param usuario almacena el  usuario
      */
     public void setUsuario(String usuario) {
         this.usuario = usuario;
@@ -108,6 +109,7 @@ public class Rol {
     /**
      * Metodo setContraseña: establece la contraseña del usuario a la variable 
      * del contructor
+     * @param contraseña almacena la contraseña del usuario
      */
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
@@ -124,6 +126,7 @@ public class Rol {
     /**
      * Metodo setNombre: establece el nombre del usuario a la variable del 
      * contructor
+     * @param nombre almacena el nombre del usuario
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -140,6 +143,7 @@ public class Rol {
     /**
      * Metodo setApellido: establece el apellido del usuario a la variable del 
      * contructor
+     * @param apellido almacena el apellido del usuario
      */
     public void setApellido(String apellido) {
         this.apellido = apellido;
@@ -156,6 +160,7 @@ public class Rol {
     /**
      * Metodo setRol: establece el rol del usuario a la variable del 
      * contructor
+     * @param rol almacena el rol del usuario
      */
     public void setRol(String rol) {
         this.rol = rol;

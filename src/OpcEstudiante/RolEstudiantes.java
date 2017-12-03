@@ -25,8 +25,8 @@ public class RolEstudiantes {
     /**
      * Metodo registrar: instancia un objeto de tipo registro que recibe parametros
      * y llama al metodo registrar de la clase registro
-     * @param usuario
-     * @param contraseña
+     * @param usuario Almacena el usuario
+     * @param contraseña Almacena la contraseña del usuario
      */
     public void registrar(String usuario, String contraseña) {
         Registro r = new Registro(usuario, contraseña);
@@ -37,8 +37,8 @@ public class RolEstudiantes {
     /**
      * Metodo describir: instancia un objeto de tipo vuelo y llama a los metodos
      * getNomApe y describir de la clase Vuelo
-     * @param usuario
-     * @param contraseña
+     * @param usuario Almacena el usuario
+     * @param contraseña Almacena la contraseña del usuario
      */
     public void describir(String usuario, String contraseña) {
         Vuelo v= null; 

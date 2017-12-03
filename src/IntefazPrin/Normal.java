@@ -22,7 +22,7 @@ public class Normal implements Volador{
     
     /**
      * Constructor Normal
-     * @param deporte
+     * @param deporte Indica el tipo de deporte que practica el mago
      */
     public Normal(String deporte) {
         this.deporte = deporte;
@@ -48,6 +48,7 @@ public class Normal implements Volador{
     /**
      * Metodo setDeporte: establece el tipo de deporte que toma el mago a la variable 
      * del contructor
+     * @param deporte Indica el tipo de deporte que practica el mago
      */
     public void setDeporte(String deporte) {
         this.deporte = deporte;

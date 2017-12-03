@@ -6,6 +6,7 @@ import proyectodepoo1par.ReadWriter;
 //import proyectodepoo1par.Rol;
 import proyectodepoo1par.Estudiante;
 
+
 public class Vuelo {
 
     //Rol rol = null; 

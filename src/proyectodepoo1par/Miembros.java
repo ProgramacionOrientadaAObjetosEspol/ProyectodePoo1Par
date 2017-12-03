@@ -32,11 +32,14 @@ public class Miembros extends Rol {
     
     /**
      * Constructor Miembros
-     * @param usuario
-     * @param contraseña
-     * @param nombre
-     * @param apellido
-     * @param rol
+     * @param usuario almacena el  usuario
+     * @param contraseña almacena la contraseña del usuario
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param rol almacena el rol del usuario
+     * @param edad almacena la edad del usuario
+     * @param casa almacena la casa a la que pertenece el mago
+     * @param varita almacena la varita que usa el mago
      */
     public Miembros(String usuario, String contraseña, String nombre, String apellido, String rol, int edad, String casa, String varita) {
         super(usuario, contraseña, nombre, apellido, rol);
@@ -47,9 +50,11 @@ public class Miembros extends Rol {
 
     /**
      * Constructor Miembros
-    * @param edad
-     * @param casa
-     * @param varita 
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param edad almacena la edad del usuario
+     * @param casa almacena la casa a la que pertenece el mago
+     * @param varita almacena la varita que usa el mago
      */
     public Miembros(int edad, String casa, String varita, String nombre, String apellido) {
         super(nombre, apellido);
@@ -62,6 +67,7 @@ public class Miembros extends Rol {
     
      /**
      * Metodo setEdad: establece el valor de edad a la variable del contructor
+     * @param edad indica la edad del usuario
      */
     public void setEdad(int edad) {
         this.edad = edad;
@@ -70,6 +76,7 @@ public class Miembros extends Rol {
     
      /**
      * Metodo setCasa: establece el valor de casa a la variable del contructor
+     * @param casa indica la casa a la que pertenece el mago
      */
     public void setCasa(String casa) {
         this.casa = casa;
@@ -78,6 +85,7 @@ public class Miembros extends Rol {
     
     /**
      * Metodo setVarita: establece el tipo de varita a la variable del contructor
+     * @param varita indica el tipo de varita que usa el mago
      */
     public void setVarita(String varita) {
         this.varita = varita;

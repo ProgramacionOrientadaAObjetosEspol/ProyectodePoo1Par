@@ -60,6 +60,7 @@ public class Principal {
      * Metodo main: Encargado del proceso de inicio de sesion, si el caso es 1 el
      * usuario ingresara de forma exitosa, si el caso es 2 el programa se cierra, 
      * caso contrario el usuario ingreso los datos de usuario y contraseña son incorrectos
+     *@param args Sera un array de Strings
      */
     public static void main(String[] args){    
         new Principal().Bienvenida();
@@ -241,6 +242,7 @@ public class Principal {
     /**
      * Metodo validarNumero: Encargado de validar que el numero que ingrese el 
      * usuario sea el correcto
+     * @param letra1 indica la letra ingresa por teclado
      * @return letra1 
      *         "0" en caso de que el usuario no ingrese ningun numero o presione 
      *          enter por error

@@ -22,7 +22,7 @@ public class Metamorfomago implements Volador {
     
     /**
      * Constructor Metamorfomago
-     * @param posión
+     * @param posión Indica el tipo de posion que toma el mago
      */
     public Metamorfomago(String posión) {
         this.posión = posión;
@@ -47,6 +47,7 @@ public class Metamorfomago implements Volador {
     /**
      * Metodo setPosión: establece el tipo de posión que toma el mago a la variable 
      * del contructor
+     * @param posión Indica el tipo de posion que toma el mago
      */
     public void setPosión(String posión) {
         this.posión = posión;

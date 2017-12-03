@@ -49,14 +49,14 @@ public class Profesor extends Miembros {
     
     /**
      * Constructor Estudiante
-     * @param usuario
-     * @param contraseña
-     * @param nombre
-     * @param apellido
-     * @param rol
-     * @param edad
-     * @param casa
-     * @param varita 
+     * @param usuario almacena el  usuario
+     * @param contraseña almacena la contraseña del usuario
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param rol almacena el rol del usuario
+     * @param edad almacena la edad del usuario
+     * @param casa almacena la casa a la que pertenece el mago
+     * @param varita almacena la varita que usa el mago
      */
     public Profesor(String usuario, String contraseña, String nombre, String apellido, String rol, int edad, String casa, String varita) {
         super(usuario, contraseña, nombre, apellido, rol, edad, casa, varita);
@@ -64,11 +64,12 @@ public class Profesor extends Miembros {
 
     /**
      * Constructor Estudiante
-     * @param edad
-     * @param casa
-     * @param varita 
-     * @param nombre
-     * @param apellido
+     * @param edad almacena la edad del usuario
+     * @param casa almacena la casa a la que pertenece el mago
+     * @param varita almacena la varita que usa el mago
+     * @param nombre almacena el nombre del usuario
+     * @param apellido almacena el apellido del usuario
+     * @param fechaRegistro almacena la fecha en que se realiza el registro
      */
     public Profesor(String fechaRegistro, int edad, String casa, String varita, String nombre, String apellido) {
         super(edad, casa, varita, nombre, apellido);
@@ -84,7 +85,7 @@ public class Profesor extends Miembros {
     }
 
     /**
-     * Metodo getFechaRegistro: devuelve la fecha de Registro 
+     * Metodo getFechaRegistro: Devuelve la fecha de Registro 
      * @return fechaRegistro 
      */
     public String getFechaRegistro() {
@@ -93,7 +94,9 @@ public class Profesor extends Miembros {
 
     
     /**
-     * Metodo setFechaRegistro: establece la fecha de registro a la variable del contructor
+     * Metodo setFechaRegistro: establece la fecha de registro a la variable 
+     * del contructor
+     * @param fechaRegistro Almacena la fecha en que se realiza el registro
      */
     public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;

@@ -53,6 +53,12 @@ public class EstudianteRegistro {
      * Metodo crearLista: Permite crear el curso con los datos proporcionados por el usuario
      * gracias a la entrada, ademas almacena la informacion en el arraylist llamado datos, 
      * el cual luego es guardo en el archivo "curso.txt"
+     * @param nombre Indica el nombre del usuario
+     * @param apellido Indica el apellido del usuario
+     * @param edad Indica la edad del usuario
+     * @param varita Indica el tipo de varita que usa el mago
+     * @param casa Indica la casa a la que pertenece el mago
+     * @param tipo Indica el tipo de mago
      */
     public void crearLista(String nombre,String apellido,String edad, String varita,String casa,String tipo){
         ReadWriter archivo = new ReadWriter();
