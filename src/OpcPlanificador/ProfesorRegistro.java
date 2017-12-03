@@ -4,6 +4,7 @@ package OpcPlanificador;
 import IntefazPrin.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import proyectodepoo1par.Principal;
 import proyectodepoo1par.Profesor;
 import proyectodepoo1par.ReadWriter;
 
@@ -23,7 +24,7 @@ public class ProfesorRegistro {
     /**
      * variable default: Almancenara la entrada 
      */
-    Scanner datos = new Scanner(System.in);
+    Scanner t = new Scanner(System.in);
     
     /**
      * variable default: Almancenara la informacion si el usuario desea continuar
@@ -90,16 +91,20 @@ public class ProfesorRegistro {
     public void pedirDatos(){
         System.out.println("CREAR PROFESOR");
         System.out.print("Ingrese nombre: ");
-        String nombre = datos.nextLine();
+        String nombre = t.nextLine();
         System.out.print("Ingrese apellido: ");
-        String apellido = datos.nextLine();
+        String apellido = t.nextLine();
         System.out.print("Ingrese edad: ");
-        int edad = datos.nextInt();
-        datos.nextLine();
+        int edad = 0;
+        while(edad == 0){
+            String n1 = t.nextLine();
+            edad = Integer.parseInt(new Principal().validarNumero(n1));
+            if(edad == 0){System.out.print("Intente de nuevo!\n\nIngrese edad: ");}
+        }
         System.out.print("Varita: ");
-        String varita = datos.nextLine();
+        String varita = t.nextLine();
         System.out.print("Fecha de ingreso: ");
-        String fechaRegistro = datos.nextLine();
+        String fechaRegistro = t.nextLine();
         
         profesor = new Profesor(fechaRegistro,edad, "null", varita, nombre, apellido);
     }
@@ -117,7 +122,7 @@ public class ProfesorRegistro {
 
         //crear
         System.out.print("\n¿Desea guardar los datos? (S/N) ");
-        op_crear = datos.nextLine();
+        op_crear = t.nextLine();
         System.out.println();
         
         if(op_crear.equals("S")){

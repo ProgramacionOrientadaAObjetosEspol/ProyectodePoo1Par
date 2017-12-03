@@ -62,31 +62,41 @@ public class Registro {
      */
     static int op_materias;
     
-     /**
-     * variable default estatica: Contador para saber si el usuario cuenta con la edad 
+    /**
+     * variable default: Contador para saber si el usuario cuenta con la edad 
      * necesaria para ver la materia escogida
-     */
-    static int extraodinario= 0;
+    */
+    int extraodinario;
     
     /**
-     * variable default estatica: Almacena "S/N" si el usuario desea o no continuar con el proceso
+     * variable privada contador: Sera usada como contador en el metodo planificador
      */
-    static String op_crear;
+    private int contador;
     
     /**
-     * variable lineas: Almacenara las lineas del archivo curso.txt 
+     * variable default: Almacena "S/N" si el usuario desea o no continuar con el proceso
      */
-    ArrayList<ArrayList<String>> lineas = null; 
+    String op_crear;
     
     /**
-     * variable lineas1: Almacenara las lineas del archivo estudiantes.txt 
+     * variable lineasFileCurso: Almacenara las lineas del archivo curso.txt 
      */
-    ArrayList<ArrayList<String>> lineas1 = null;
+    ArrayList<ArrayList<String>> lineasFileCurso = null; 
     
     /**
-     * variable lineas2: Almacenara las lineas del archivo registrar.txt 
+     * variable lineasFileEstudiantes: Almacenara las lineas del archivo estudiantes.txt 
      */
-    ArrayList<String> lineas2 = null;
+    ArrayList<ArrayList<String>> lineasFileEstudiantes = null;
+    
+    /**
+     * variable lineasFileRegistro: Almacenara las lineas del archivo registro.txt 
+     */
+    ArrayList<ArrayList<String>> lineasFileRegistro = null;
+    
+    /**
+     * variable lineasAddFile: Almacenara las lineas para agregar al archivo registro.txt 
+     */
+    ArrayList<String> lineasAddFile = null;
     
     /**
      * variable estatica arr: Almacena en un array de objetos las materias
@@ -116,30 +126,56 @@ public class Registro {
      * de edad para la materia que escogio
      */
     public void registrar() {
-        archivo = new ReadWriter();
-        lineas = new ArrayList<>();
-        lineas1 = new ArrayList<>();
+        op_crear = "N"; 
+        contador = 0;
+        extraodinario = 0;
+        archivo = new ReadWriter();        
         
-        lineas = archivo.leerArchivo("cursos.txt");
         
         //Elegir la opcion de las materias
         op_materias = new Principal().eligirMateria();
+        lineasFileRegistro = archivo.leerArchivo("registro.txt");
         
-        for(ArrayList<String> linea: lineas){
+        getNomApe();
+        
+        //Cuenta cuantos alumnos hay en esa clase
+        for (ArrayList<String> linea : lineasFileRegistro) {
+           if (linea.get(3).equals(arr[op_materias - 1].toString())) {
+               contador ++;
+           }
+           if(linea.get(1).equals(nombre) && linea.get(2).equals(apellido) && linea.get(3).equals(arr[op_materias-1].toString())){
+               System.out.println("\nYa está registrado en la materia.");return;
+           }
+        }
+        
+        System.out.print("");
+        int comprobacion = 0;
+        lineasFileCurso = archivo.leerArchivo("cursos.txt");
+        for(ArrayList<String> linea: lineasFileCurso){
             if(linea.get(0).equals(arr[op_materias-1].toString())){
-                System.out.print("El horario de "+ arr[op_materias-1] +" es "+ linea.get(2) +", "+ linea.get(3));
+                //Comprobamos si el curso esta lleno
+                int capacidad = Integer.parseInt(linea.get(4));
+                if(capacidad == contador){System.out.println("\nEl curso esta lleno.");return;}
+                //Mostramos el horario disponible
+                System.out.print("\nEl horario de "+ arr[op_materias-1] +" es "+ linea.get(2) +", "+ linea.get(3));
+                comprobacion+=1;
             }            
         }
+        
+        if(comprobacion==0){System.out.println("\nEsta materia no tiene curso asignado.");return;}
+        
+        lineasFileRegistro.clear(); //Liberamos memoria
+        lineasFileCurso.clear();    //liberamos memoria
         
         //Registrarse
         System.out.print("\n¿Desea registrarse? (S/N) ");
         op_crear = t.nextLine();
         System.out.println();
         
-        getNomApe();
-        lineas1 = archivo.leerArchivo("estudiantes.txt"); 
         if (op_crear.equals("S")) {
-            for(ArrayList<String> linea: lineas1){
+            extraodinario = 0;
+            lineasFileEstudiantes = archivo.leerArchivo("estudiantes.txt"); 
+            for(ArrayList<String> linea: lineasFileEstudiantes){
                 //Compara nombre y apellidos
                 if(linea.get(0).equals(nombre) && linea.get(1).equals(apellido)){
                     //compara si pertemece a una de las materias con restriccion
@@ -151,8 +187,8 @@ public class Registro {
                     }
                     registrarArchivo();
                 }
-                
             }
+            lineasFileEstudiantes.clear();
         }
     }
     
@@ -176,7 +212,7 @@ public class Registro {
      * "registro.txt" los datos del usuario obtenidos durante el registro
      */
     public void registrarArchivo(){
-        lineas2 = new ArrayList<>();
+        lineasAddFile = new ArrayList<>();
         
         //FECHA
         Calendar fecha = new GregorianCalendar();
@@ -188,16 +224,16 @@ public class Registro {
         int dia = fecha.get(Calendar.DAY_OF_MONTH);
         String f = Integer.toString(dia)+"/"+String.valueOf(mes+1)+"/"+String.valueOf(año);
 
-        lineas2.add(f);
-        lineas2.add(nombre);
-        lineas2.add(apellido);
-        lineas2.add(arr[op_materias-1].toString());
+        lineasAddFile.add(f);
+        lineasAddFile.add(nombre);
+        lineasAddFile.add(apellido);
+        lineasAddFile.add(arr[op_materias-1].toString());
         if(extraodinario == 0){
-            lineas2.add("N");
+            lineasAddFile.add("N");
         }else{
-            lineas2.add("E");
+            lineasAddFile.add("E");
         }
-        archivo.AgregarAlArchivo(lineas2, "registro.txt");
+        archivo.AgregarAlArchivo(lineasAddFile, "registro.txt");
     }
     
     
@@ -206,8 +242,8 @@ public class Registro {
      * del usuario mediante el recorrido el archivo "usuario.txt.2
      */
     public void getNomApe(){
-        lineas = archivo.leerArchivo("usuarios.txt");
-        for(ArrayList<String> linea: lineas){
+        lineasFileCurso = archivo.leerArchivo("usuarios.txt");
+        for(ArrayList<String> linea: lineasFileCurso){
             if(linea.get(0).equals(usuario) && linea.get(1).equals(contraseña)){
                 nombre = linea.get(2);
                 apellido = linea.get(3);
@@ -215,6 +251,3 @@ public class Registro {
         }
     }
 }
-
-//Falta!
-//Aumentar el numero de registrados en ese curso

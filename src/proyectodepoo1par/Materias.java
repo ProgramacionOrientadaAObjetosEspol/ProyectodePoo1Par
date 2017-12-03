@@ -10,7 +10,7 @@ package proyectodepoo1par;
  * @version 02/12/17
  */
 public enum Materias {
-    Pociones("Pociones"), DefensaContraLasArtesOscuras("Defensa contra las artes oscuras"), Adivinacion("Adivinacion"), Astronomia("Astronomia"), HistoriaDeLaMagia("HistoriaDeLaMagia"), Herbologia("Herbologia"), Encantamientos("Encantamientos"), Vuelo("Vuelo");
+    Pociones("Pociones"), DefensaContraLasArtesOscuras("Defensa contra las artes oscuras"), Adivinacion("Adivinacion"), Astronomia("Astronomia"), HistoriaDeLaMagia("Historia de la magia"), Herbologia("Herbologia"), Encantamientos("Encantamientos"), Vuelo("Vuelo");
     
     //Declaracion de atributos
     

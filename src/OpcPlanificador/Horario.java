@@ -1,8 +1,8 @@
 package OpcPlanificador;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import proyectodepoo1par.Materias;
+import proyectodepoo1par.Principal;
 import proyectodepoo1par.ReadWriter;
 
 
@@ -18,21 +18,16 @@ import proyectodepoo1par.ReadWriter;
 public class Horario {
 
     //Declaracion de atributos
-    
-    /**
-     * variable default: Almancenara la entrada 
-     */
-    Scanner t = new Scanner(System.in);
-    
+        
     /**
      * variable privada lineasCurso: Almacenara las lineas del archivo "curso.txt"
      */
-    private ArrayList<ArrayList<String>> lineasCurso = new ArrayList<>();
+    private ArrayList<ArrayList<String>> lineasCurso = null;
     
     /**
      * variable privada lineasRegistro: Almacenara las lineas del archivo "registro.txt"
      */
-    private ArrayList<ArrayList<String>> lineasRegistro = new ArrayList<>();
+    private ArrayList<ArrayList<String>> lineasRegistro = null;
     
     /**
      * variable privada op_materias: Almacenara la opcion de materia ingresa por 
@@ -67,16 +62,8 @@ public class Horario {
         lineasCurso = archivo.leerArchivo("cursos.txt");
         lineasRegistro = archivo.leerArchivo("registro.txt");
         
-        //Materias
-        System.out.println("\n/** MATERIAS **/ \n");
-        int n = 1;
-        for (Object i : arr) {
-            System.out.println(n + ". " + i);
-            n++;
-        }
-        System.out.print("Elija una materia del listado de materias: ");
-        op_materias = t.nextInt();
-        t.nextLine();
+        //
+        op_materias = new Principal().eligirMateria();
         System.out.println("\n");
         
         //Cuenta cuantos alumnos hay en esa clase
@@ -85,6 +72,7 @@ public class Horario {
                contador ++;
            }
         }
+        lineasRegistro.clear();
     }
 
     /**

@@ -1,8 +1,9 @@
 package OpcPlanificador;
 
-import static OpcPlanificador.Curso.t;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
+import proyectodepoo1par.Principal;
 import proyectodepoo1par.ReadWriter;
 
 //Declaracion de la clase
@@ -16,7 +17,7 @@ import proyectodepoo1par.ReadWriter;
  */
 
 public class Lista {
-
+    Scanner t = new Scanner(System.in);
     ArrayList<ArrayList<String>> lineasRegistro = null;
     ArrayList<ArrayList<String>> lineasEstudiante = null;
     ArrayList<ArrayList<String>> Arraygeneral = new ArrayList<>();
@@ -44,8 +45,12 @@ public class Lista {
             System.out.println("1. Edad \n2. Nombre \n3. Numero de materias registradas");
             System.out.println("");
             System.out.print("Elija el criterio para ordenar: ");
-            opc = t.nextInt();
-            t.nextLine();
+            opc = 0;
+            while(opc == 0){
+                String n1 = t.nextLine();
+                opc = Integer.parseInt(new Principal().validarNumero(n1));
+                if(opc == 0){System.out.print("Intente de nuevo!\n\nElija un profesor del listado de profesores: ");}
+            }
             //Opcion 1 - Ordena por edad
             if (opc == 1) {
                 ArrayList<String> contenedor = null;

@@ -2,7 +2,6 @@
 package OpcEstudiante;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import proyectodepoo1par.Materias;
 import proyectodepoo1par.Principal;
 import proyectodepoo1par.ReadWriter;
@@ -16,13 +15,7 @@ import proyectodepoo1par.ReadWriter;
  * @version 02/12/17
  */
 
-public class Planificacion { 
-   
-    /**
-     * variable de entrada: t 
-     */
-    Scanner t = new Scanner(System.in);
-    
+public class Planificacion {     
     /*
      * variable privada lineasCurso: Array de array que contiene las lineas del documento curso.txt
     */ 

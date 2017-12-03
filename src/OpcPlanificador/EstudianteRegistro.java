@@ -5,6 +5,7 @@ import IntefazPrin.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import proyectodepoo1par.Estudiante;
+import proyectodepoo1par.Principal;
 import proyectodepoo1par.ReadWriter;
 
 
@@ -24,7 +25,7 @@ public class EstudianteRegistro {
     /**
      * variable default estatica: Almancenara la entrada 
      */
-    Scanner datos = new Scanner(System.in);
+    Scanner t = new Scanner(System.in);
     
     
     /**
@@ -72,6 +73,7 @@ public class EstudianteRegistro {
         listaDatos.add(tipo);
         
         archivo.AgregarAlArchivo(listaDatos, "estudiantes.txt");
+        listaDatos.clear(); //Limpiamos memoria
     }   
     
     
@@ -83,16 +85,20 @@ public class EstudianteRegistro {
     public void pedirDatos(){
         System.out.println("CREAR ESTUDIANTE");
         System.out.print("Ingrese nombre: ");
-        String nombre = datos.nextLine();
+        String nombre = t.nextLine();
         System.out.print("Ingrese apellido: ");
-        String apellido = datos.nextLine();
+        String apellido = t.nextLine();
         System.out.print("Ingrese edad: ");
-        int edad = datos.nextInt();
-        datos.nextLine();
+        int edad = 0;
+        while(edad == 0){
+            String n1 = t.nextLine();
+            edad = Integer.parseInt(new Principal().validarNumero(n1));
+            if(edad == 0){System.out.print("Intente de nuevo!\n\nIngrese edad: ");}
+        }
         System.out.print("Varita: ");
-        String varita = datos.nextLine();
+        String varita = t.nextLine();
         System.out.print("Casa: ");
-        String casa = datos.nextLine();
+        String casa = t.nextLine();
         
         estudiante = new Estudiante(edad, casa, varita, nombre, apellido);
     }
@@ -111,7 +117,7 @@ public class EstudianteRegistro {
         
         //crear
         System.out.print("\n¿Desea guardar los datos? (S/N) ");
-        op_crear = datos.nextLine();
+        op_crear = t.nextLine();
         System.out.println();
         
         //Guardar dependiendo del tipo de mago
