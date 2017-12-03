@@ -5,14 +5,62 @@ import OpcPlanificador.RolPlanificador;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Declaracion de la clase
+
+/**
+ * Clase Principal
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 public class Principal {
-    //atributos estaticos
+   //Declaracion de atributos
+    
+    /**
+     * variable estatica: Almancenara la entrada
+     */
     static Scanner t = new Scanner(System.in);
-    static String usuario, contraseña, validacion;
+    
+    /**
+     * variable estatica: Almancenara el usuario
+     */
+    static String usuario;
+    
+    /**
+     * variable estatica: Almancenara la contraseña del usuario
+     */
+    static String contraseña;
+    
+    /**
+     * variable estatica: Usada para validar el progreso 
+     */
+    static String validacion;
+    
+    /**
+     * variable estatica: Almancenara en un array las lineas del archivo "usuarios.txt"
+     * que es inicializado en null para su posterior implementacion
+     */
     static ArrayList<ArrayList<String>> lineas = null;
+    
+    /**
+     * variable estatica: Almancenara la opcion de lectura del archivo a usar,
+     * es inicializado en null para su posterior implementacion
+     */
     static ReadWriter archivo = null;
+    
+    /**
+     * variable estatica: Se usara para validar el valor de ingreso dado por el usario
+     */
     static int validacion_ingreso;
     
+    //Declaracion de metodos 
+    
+     /**
+     * Metodo main: Encargado del proceso de inicio de sesion, si el caso es 1 el
+     * usuario ingresara de forma exitosa, si el caso es 2 el programa se cierra, 
+     * caso contrario el usuario ingreso los datos de usuario y contraseña son incorrectos
+     */
     public static void main(String[] args){    
         new Principal().Bienvenida();
         
@@ -39,8 +87,14 @@ public class Principal {
         }
     }    
     
+    
+     /**
+     * Metodo Bienvenida: Encargado de mostrar el mensaje "Bienvenido al sistema
+     * del colegio Hogwarts de Hagia y Hechiceria  "
+     */
+    
     /**
-    * ESte es un mensaje de bienvenida
+    * Este es un mensaje de bienvenida
     */
     public void Bienvenida(){
         System.out.println("        _________\n" +
@@ -51,13 +105,16 @@ public class Principal {
 "       |  |___|  |  |   | |   |_____  |  | \\     |    \\  \\_/  /    |   |______  |  | \\     | |   | |  --  | |  --  | ---   /\n" +
 "       |________/   |___| |_________| |__|  \\____|     \\_____/     |__________| |__|  \\____| |___| |_____/   \\____/  \\____/\n" );
         
-        System.out.println("Al sistema de colegio Hogwarts");
+        System.out.println("Al sistema del colegio Hogwarts de Magia y Hechiceria");
     }
     
-    /**
-    * Respectiva validacion de iniciar sesion o cerrar 
-    * y en cuanto a si continuar o no
-    */
+    
+    
+     /**
+     * Metodo Validacion: Encargado del proceso de validacion del inicio de sesion
+     * ademas muestras las opciones necesarias para que el usuario continue o no
+     * con el proceso
+     */
     public static void Validacion(){
         //Creacion de objetos para leer el archivo de usuarios.txt
         archivo = new ReadWriter();
@@ -98,8 +155,10 @@ public class Principal {
     }
     
     /**
-    * Aqui se recibe el resultado para planificador
-    */
+     * Metodo opPlanficador: Encargado de recibir el resultado para planificador,
+     * muestra el menu y valida los datos ingresados para dar paso a la creacion 
+     * del curso. En caso de que el usuario no desee pueda cerrar la sesion.
+     */
     public void opPlanificador(){
         
         OUTER:
@@ -140,9 +199,11 @@ public class Principal {
         }
     }
     
-    /**
-    * Aqui se recibe el resultado para estudiante
-    */
+     /**
+     * Metodo opEstudiante: Encargado de recibir el resultado para estudiante,
+     * muestra el menu y valida los datos ingresados para dar paso a la creacion 
+     * del curso. En caso de que el usuario no desee pueda cerrar la sesion.
+     */
     public void opEstudiante(){
         OUTER_1:
         while (true) {
@@ -178,8 +239,12 @@ public class Principal {
     }
     
     /**
-    * Aqui se valida si es un numero el que ingresa el usuarioa
-    */
+     * Metodo validarNumero: Encargado de validar que el numero que ingrese el 
+     * usuario sea el correcto
+     * @return letra1 
+     *         "0" en caso de que el usuario no ingrese ningun numero o presione 
+     *          enter por error
+     */
     public String validarNumero(String letra1){
             Scanner teclado1 = new Scanner(letra1);
             if(teclado1.hasNextInt()){

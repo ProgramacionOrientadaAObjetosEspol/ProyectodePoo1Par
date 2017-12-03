@@ -7,9 +7,29 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+//Declaracion de la clase
+
+/**
+ * Clase ReadWriter 
+ * @author Araujo Steven
+ * @author Banchon Melanie
+ * @author Guerrero Darly
+ * @version 02/12/17
+ */
 public class ReadWriter {
     
-    //Metodos    
+    //Declaracion de metodos 
+    
+     /**
+     * Metodo leerArchivo: Encargado de leer el archivo que se desea haciendo uso
+     * de la direccion, ademas se utliza el metodo try/catch para evitar algun
+     * error debido al uso de archivos, en caso de que lo haya lo mostrara en un 
+     * mensaje con el tipo de error
+     * @param nombre 
+     * @exception IOException
+     */
+  
     public ArrayList<ArrayList<String>> leerArchivo(String nombre){
         ArrayList<ArrayList<String>> list_lineas = new ArrayList<>();
 
@@ -40,6 +60,15 @@ public class ReadWriter {
         return list_lineas;
     }
     
+    /**
+     * Metodo leerArchivo: Encargado de sobreescribir el archivo que se desea haciendo uso
+     * de la direccion, ademas se utliza el metodo try/catch para evitar algun
+     * error debido al uso de archivos, en caso de que lo haya lo mostrara en un 
+     * mensaje con el tipo de error
+     * @param nombre 
+     * @param lineas 
+     * @exception IOException
+     */
     public void sobreEscribirArchivo(ArrayList<ArrayList<String>> lineas, String nombre){
 	File f = new File("");
         String dire = f.getAbsolutePath();
@@ -68,6 +97,15 @@ public class ReadWriter {
         }
     }
     
+    /**
+     * Metodo AgregarAlArchivo: Encargado de agregar el archivo que se desea haciendo uso
+     * de la direccion, ademas se utliza el metodo try/catch para evitar algun
+     * error debido al uso de archivos, en caso de que lo haya lo mostrara en un 
+     * mensaje con el tipo de error
+     * @param nombre 
+     * @param linea 
+     * @exception IOException
+     */
     public void AgregarAlArchivo(ArrayList<String> linea, String nombre){
         File f = new File("");
         String dire = f.getAbsolutePath();
