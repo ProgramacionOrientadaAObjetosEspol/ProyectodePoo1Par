@@ -1,7 +1,6 @@
 package proyectodepoo1par;
 
 import IntefazPrin.*;
-import java.util.Scanner;
 
 //Declaracion de la clase
 
@@ -15,12 +14,6 @@ import java.util.Scanner;
 public class Profesor extends Miembros {
     
     //Declaracion de atributos
-    
-    /**
-     * variable datos: Almancenara la entrada
-     */
-    Scanner datos = new Scanner(System.in);
-    
     /**
      * objeto nomal: Inicializacion del objeto de tipo normal como vacio 
      * para su posterior implementacion
@@ -76,14 +69,6 @@ public class Profesor extends Miembros {
         this.fechaRegistro = fechaRegistro;
     }
     
-    //Declaracion de metodos 
-    
-     /**
-     * Metodo TipoMago: devuelve el tipo de mago 
-     */
-    public void tipoMago(){ 
-    }
-
     /**
      * Metodo getFechaRegistro: Devuelve la fecha de Registro 
      * @return fechaRegistro 
@@ -113,48 +98,37 @@ public class Profesor extends Miembros {
      */
     @Override
     public Object TipoMago() {
-        OUTER:
-        while (true) {
-            int validacion = 0;
-            System.out.println("Tipos de Magos/Brujas");
-            System.out.println("1. Animago \n2. Metamorfomago \n3. Normal ");
-            System.out.print("Elija el tipo de mago/bruja que es: ");
-            
-            while(validacion == 0){
-                String n1 = datos.nextLine();
-                validacion = Integer.parseInt(new Principal().validarNumero(n1));
-                if(validacion == 0){System.out.print("Intente de nuevo!\n\nElija el tipo de mago/bruja que es: ");}
-            }
-            System.out.println("");
-            switch (validacion) {
-                case 1:
-                    System.out.print("En que clase de animal puede convertirse?: ");
-                    String animal = datos.nextLine();
+        int validacion = validarTipoMago();
+        System.out.println("");
+        switch (validacion) {
+            case 1:
+                System.out.print("En que clase de animal puede convertirse?: ");
+                String animal = datos.nextLine();
 
-                    System.out.print("Ingrese su hechizo: ");
-                    String hechizo = datos.nextLine();
-                    animago = new Animagos(animal, hechizo);
-                    return animago;
-                    
-                case 2:
-                    System.out.print("Ingrese su pocion: ");
-                    String pocion = datos.nextLine();
+                System.out.print("Ingrese su hechizo: ");
+                String hechizo = datos.nextLine();
+                animago = new Animagos(animal, hechizo);
+                return animago;
 
-                    metamorfomago = new Metamorfomago(pocion);
-                    return metamorfomago;
-                    
-                case 3:
-                    System.out.print("Que clase de deporte practica: ");
-                    String deporte = datos.nextLine();
+            case 2:
+                System.out.print("Ingrese su pocion: ");
+                String pocion = datos.nextLine();
 
-                    normal = new Normal(deporte);
-                    return normal;
-                    
-                default: 
-                     System.out.println("Intente de nuevo.\n");
-                    break; //Intentar de nuevo
-            }
+                metamorfomago = new Metamorfomago(pocion);
+                return metamorfomago;
+
+            case 3:
+                System.out.print("Que clase de deporte practica: ");
+                String deporte = datos.nextLine();
+
+                normal = new Normal(deporte);
+                return normal;
+
+            default: 
+                 System.out.println("Intente de nuevo.\n");
+                break; //Intentar de nuevo
         }
+        return null;
     }
     
     /**

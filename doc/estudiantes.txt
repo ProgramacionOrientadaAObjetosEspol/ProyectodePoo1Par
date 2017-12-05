@@ -8,3 +8,5 @@ B,b,15,asd,aca,M
 Harry,Araujo,16,var,Slytherin,A
 Harry,Castro,19,cart,Portete,M
 Mayerli,Briones,16,lom,Florida,N
+Asda,cx,18,dsf,vxc,A
+Bryan,Quezada,9,ce,Sur,N

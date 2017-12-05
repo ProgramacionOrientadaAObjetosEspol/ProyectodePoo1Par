@@ -2,6 +2,9 @@ package proyectodepoo1par;
 
 //Declaracion de la clase
 
+import java.util.Scanner;
+
+
 /**
  * Clase Miembros que hereda de la clase Rol 
  * @author Araujo Steven
@@ -27,6 +30,12 @@ public abstract class Miembros extends Rol {
      * variable privada: Almancenara el tipo de varita del usuario
      */
     private String varita;
+    
+    
+    /**
+     * variable default: Almancenara la entrada 
+     */
+    Scanner datos = new Scanner(System.in);
 
     //Declaracion de contructores
     
@@ -115,5 +124,17 @@ public abstract class Miembros extends Rol {
         return varita;
     }
 
+    public int validarTipoMago(){
+        int validacion = 0;
+        System.out.println("Tipos de Magos/Brujas");
+        System.out.println("1. Animago \n2. Metamorfomago \n3. Normal ");
+        System.out.print("Elija el tipo de mago/bruja que es: ");
 
+        while(validacion == 0 || (validacion<1 || validacion>3)){
+            String n1 = datos.nextLine();
+            validacion = Integer.parseInt(new Principal().validarNumero(n1));
+            if(validacion == 0 || (validacion<1 || validacion>3)){System.out.print("Intente de nuevo!\n\nElija el tipo de mago/bruja que es: ");}
+        }
+        return validacion;
+    }
 }
